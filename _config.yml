@@ -1,0 +1,7 @@
+title: SDFOTO
+description: Portfolio fotográfico de Silvia Díaz
+baseurl: ""
+url: "https://sdfoto.github.io"
+markdown: kramdown
+permalink: /:title/
+theme: minima
