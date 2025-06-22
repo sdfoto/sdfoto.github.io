@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sdfoto - Fotografía Profesional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="inicio">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#acerca">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="hero-text">
+            <h1>sdfoto</h1>
+            <p>Capturando momentos inolvidables</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="galeria">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Galería 1">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Galería 2">
+                <img src="https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=800&q=80" alt="Galería 3">
+                <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=800&q=80" alt="Galería 4">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" alt="Galería 5">
+                <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=800&q=80" alt="Galería 6">
+            </div>
+        </section>
+
+        <section id="acerca" class="about">
+            <h2>Acerca de</h2>
+            <p>Soy un fotógrafo profesional dedicado a capturar la belleza de cada momento. Mi pasión es ofrecer imágenes de alta calidad que cuenten historias y transmitan emociones. Creo en el poder de la fotografía para inmortalizar los instantes más importantes de la vida.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form class="contact-form">
+                <label>Nombre
+                    <input type="text" name="name" required>
+                </label>
+                <label>Correo electrónico
+                    <input type="email" name="email" required>
+                </label>
+                <label>Mensaje
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 sdfoto. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
