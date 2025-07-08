@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>silviateca</title>
+    <title>sd · foto</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-
-    <!-- CSS externo -->
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
@@ -42,58 +40,40 @@
         transition: opacity 0.3s ease;
         z-index: 1;
         background: none;
-        padding: 0;
-    }
-
+        padding: 0;    }
     .gallery-item:hover::after {
-        opacity: 1;
-    }
-
+        opacity: 1;  }
     /* Imagen destacada en vertical */
     .vertical-grande img {
         height: 600px;
         object-fit: cover;
-        width: 100%;
-    }
-
+        width: 100%;   }
     /* Imagen aún más alta */
     .extra-alta img {
         height: 800px;
         object-fit: cover;
-        width: 100%;
-    }
-
+        width: 100%;   }
     /* Imagen cuadrada */
     .cuadrada img {
         height: 400px;
         object-fit: cover;
-        width: 100%;
-    }
-
-    body {
+        width: 100%;    }
+        body {
         font-family: raleway, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
-    }
-
+        align-items: center;    }
     #wrapper {
-        width: 100%;
-    }
-
+        width: 100%;    }
     .imagen-con-texto {
         position: relative;
-        display: inline-block;
-    }
-
+        display: inline-block;    }
     .imagen-con-texto img {
         display: block;
         width: 100%;
-        height: auto;
-    }
-
+        height: auto;   }
     .texto-superpuesto {
         position: absolute;
         top: 50%;
@@ -104,46 +84,36 @@
         font-weight: bold;
         text-shadow: 1px 1px 4px black;
         text-align: center;
-        padding: 10px;
-    }
-
+        padding: 10px;    }
     @media screen and (max-width: 768px) {
         #gallery {
             column-count: 1;
-            padding: 0 10px;
-        }
-
+            padding: 0 10px;  }
         .vertical-grande img,
         .extra-alta img,
         .cuadrada img {
             height: auto;
-            object-fit: contain;
-        }
-
+            object-fit: contain;      }
         .gallery-item::after {
             font-size: 1em;
             bottom: 4px;
-            right: 4px;
-        }
-
+            right: 4px;   }
         #hero h1 {
-            font-size: 2em;
-        }
-
+            font-size: 2em;   }
         #hero a {
             font-size: 1em;
-            padding: 8px 16px;
-        }
-    }
+            padding: 8px 16px;  }  }
 </style>
 </head>
+    
 <body class="is-preload">
     <div id="wrapper">
         <!-- Sección de encabezado específica para Caldera -->
         <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
-            <h1 style="font-size: 3em; margin-bottom: 10px; color:black;">Arenas Negras, Parque Natural Especial Chinyero</h1>
+            <h1 style="font-size: 3.5em; margin-bottom: 20px; color: black;">Arenas Negras, Parque Natural Especial Chinyero</h1>
             <!--<p style="font-size: 1.5em; margin-bottom: 20px;"></p>-->
-            <a href="#gallery" style="text-decoration: none; padding: 10px 20px; background: #f56a6a; color: #fff; font-size: 1.2em; border-radius: 5px;">!Qué disfrutes!</a>
+            <a href="https://es.wikiloc.com/wikiloc/view.do?pic=rutas-senderismo&slug=circular-chinyero-montana-de-la-cruz-los-hornitos-desde-el-area-recreativa-de-arenas-negras&id=169237014&rd=es" 
+                style="text-decoration: none; padding: 10px 20px; background: #f56a6a; color: #fff; font-size: 1.2em; border-radius: 5px;">Ruta</a>
         </section>
 
         <!-- Lista de imágenes -->
