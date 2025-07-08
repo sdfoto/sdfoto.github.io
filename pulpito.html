@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>silviateca</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- CSS interno -->
+    <style>
+    #gallery {
+        column-count: 3;
+        column-gap: 10px;
+        padding: 10px;
+        background-color: #2c2c2c;
+    }
+
+    .gallery-item {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0px;
+    }
+
+    .gallery-item::after {
+        content: "👁️";
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font-size: 1.2em;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        background: none;
+        padding: 0;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+
+    /* Imagen destacada en vertical */
+    .vertical-grande img {
+        height: 600px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen aún más alta */
+    .extra-alta img {
+        height: 800px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen cuadrada */
+    .cuadrada img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    body {
+        font-family: raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #wrapper {
+        width: 100%;
+    }
+
+    .imagen-con-texto {
+        position: relative;
+        display: inline-block;
+    }
+
+    .imagen-con-texto img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-superpuesto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #gallery {
+            column-count: 1;
+            padding: 0 10px;
+        }
+
+        .vertical-grande img,
+        .extra-alta img,
+        .cuadrada img {
+            height: auto;
+            object-fit: contain;
+        }
+
+        .gallery-item::after {
+            font-size: 1em;
+            bottom: 4px;
+            right: 4px;
+        }
+
+        #hero h1 {
+            font-size: 2em;
+        }
+
+        #hero a {
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+    }
+</style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <!-- Sección de encabezado específica para Caldera -->
+        <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
+            <h1 style="font-size: 3em; margin-bottom: 10px; color:black;">Montaña El Púlpito</h1>
+            <!--<p style="font-size: 1.5em; margin-bottom: 20px;"></p>-->
+            <a href="#gallery" style="text-decoration: none; padding: 10px 20px; background: #f56a6a; color: #fff; font-size: 1.2em; border-radius: 5px;">!Qué disfrutes!</a>
+        </section>
+
+        <!-- Lista de imágenes -->
+  <div id="gallery">
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (1).JPG" data-lightbox="pulpito" data-title="Púlpito 1">
+            <img src="images/fulls/pulpito/pulpito (1).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (2).JPG" data-lightbox="pulpito" data-title="Púlpito 2">
+            <img src="images/fulls/pulpito/pulpito (2).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (3).JPG" data-lightbox="pulpito" data-title="Púlpito 3">
+            <img src="images/fulls/pulpito/pulpito (3).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (4).JPG" data-lightbox="pulpito" data-title="Púlpito 4">
+            <img src="images/fulls/pulpito/pulpito (4).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (5).JPG" data-lightbox="pulpito" data-title="Púlpito 5">
+            <img src="images/fulls/pulpito/pulpito (5).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (6).JPG" data-lightbox="pulpito" data-title="Púlpito 6">
+            <img src="images/fulls/pulpito/pulpito (6).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (7).JPG" data-lightbox="pulpito" data-title="Púlpito 7">
+            <img src="images/fulls/pulpito/pulpito (7).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (8).JPG" data-lightbox="pulpito" data-title="Púlpito 8">
+            <img src="images/fulls/pulpito/pulpito (8).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (9).JPG" data-lightbox="pulpito" data-title="Púlpito 9">
+            <img src="images/fulls/pulpito/pulpito (9).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (10).JPG" data-lightbox="pulpito" data-title="Púlpito 10">
+            <img src="images/fulls/pulpito/pulpito (10).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (11).JPG" data-lightbox="pulpito" data-title="Púlpito 11">
+            <img src="images/fulls/pulpito/pulpito (11).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (12).JPG" data-lightbox="pulpito" data-title="Púlpito 12">
+            <img src="images/fulls/pulpito/pulpito (12).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (13).JPG" data-lightbox="pulpito" data-title="Púlpito 13">
+            <img src="images/fulls/pulpito/pulpito (13).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (14).JPG" data-lightbox="pulpito" data-title="Púlpito 14">
+            <img src="images/fulls/pulpito/pulpito (14).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (15).JPG" data-lightbox="pulpito" data-title="Púlpito 15">
+            <img src="images/fulls/pulpito/pulpito (15).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (16).JPG" data-lightbox="pulpito" data-title="Púlpito 16">
+            <img src="images/fulls/pulpito/pulpito (16).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (17).JPG" data-lightbox="pulpito" data-title="Púlpito 17">
+            <img src="images/fulls/pulpito/pulpito (17).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (18).JPG" data-lightbox="pulpito" data-title="Púlpito 18">
+            <img src="images/fulls/pulpito/pulpito (18).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (19).JPG" data-lightbox="pulpito" data-title="Púlpito 19">
+            <img src="images/fulls/pulpito/pulpito (19).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (20).JPG" data-lightbox="pulpito" data-title="Púlpito 20">
+            <img src="images/fulls/pulpito/pulpito (20).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (21).JPG" data-lightbox="pulpito" data-title="Púlpito 21">
+            <img src="images/fulls/pulpito/pulpito (21).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (22).JPG" data-lightbox="pulpito" data-title="Púlpito 22">
+            <img src="images/fulls/pulpito/pulpito (22).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (23).JPG" data-lightbox="pulpito" data-title="Púlpito 23">
+            <img src="images/fulls/pulpito/pulpito (23).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (24).JPG" data-lightbox="pulpito" data-title="Púlpito 24">
+            <img src="images/fulls/pulpito/pulpito (24).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (25).JPG" data-lightbox="pulpito" data-title="Púlpito 25">
+            <img src="images/fulls/pulpito/pulpito (25).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (26).JPG" data-lightbox="pulpito" data-title="Púlpito 26">
+            <img src="images/fulls/pulpito/pulpito (26).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (27).JPG" data-lightbox="pulpito" data-title="Púlpito 27">
+            <img src="images/fulls/pulpito/pulpito (27).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (28).JPG" data-lightbox="pulpito" data-title="Púlpito 28">
+            <img src="images/fulls/pulpito/pulpito (28).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (29).JPG" data-lightbox="pulpito" data-title="Púlpito 29">
+            <img src="images/fulls/pulpito/pulpito (29).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (30).JPG" data-lightbox="pulpito" data-title="Púlpito 30">
+            <img src="images/fulls/pulpito/pulpito (30).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (31).JPG" data-lightbox="pulpito" data-title="Púlpito 31">
+            <img src="images/fulls/pulpito/pulpito (31).JPG" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/pulpito/pulpito (32).JPG" data-lightbox="pulpito" data-title="Púlpito 32">
+            <img src="images/fulls/pulpito/pulpito (32).JPG" alt="">
+        </a>
+    </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>

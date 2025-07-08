@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>silviateca</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- CSS interno -->
+    <style>
+    #gallery {
+        column-count: 3;
+        column-gap: 10px;
+        padding: 10px;
+        background-color: #2c2c2c;
+    }
+
+    .gallery-item {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0px;
+    }
+
+    .gallery-item::after {
+        content: "👁️";
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font-size: 1.2em;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        background: none;
+        padding: 0;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+
+    /* Imagen destacada en vertical */
+    .vertical-grande img {
+        height: 600px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen aún más alta */
+    .extra-alta img {
+        height: 800px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen cuadrada */
+    .cuadrada img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    body {
+        font-family: raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #wrapper {
+        width: 100%;
+    }
+
+    .imagen-con-texto {
+        position: relative;
+        display: inline-block;
+    }
+
+    .imagen-con-texto img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-superpuesto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #gallery {
+            column-count: 1;
+            padding: 0 10px;
+        }
+
+        .vertical-grande img,
+        .extra-alta img,
+        .cuadrada img {
+            height: auto;
+            object-fit: contain;
+        }
+
+        .gallery-item::after {
+            font-size: 1em;
+            bottom: 4px;
+            right: 4px;
+        }
+
+        #hero h1 {
+            font-size: 2em;
+        }
+
+        #hero a {
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+    }
+</style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <!-- Sección de encabezado específica para Caldera -->
+        <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
+            <h1 style="font-size: 3em; margin-bottom: 10px; color:black;">Guardianes Centenarios (Agua García)</h1>
+            <!--<p style="font-size: 1.5em; margin-bottom: 20px;"></p>-->
+            <a href="#gallery" style="text-decoration: none; padding: 10px 20px; background: #f56a6a; color: #fff; font-size: 1.2em; border-radius: 5px;">!Qué disfrutes!</a>
+        </section>
+
+        <!-- Lista de imágenes -->
+    <div id="gallery">
+<div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (1).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 1">
+      <img src="images/fulls/aguagarcia/agua (1).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (2).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 2">
+      <img src="images/fulls/aguagarcia/agua (2).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (3).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 3">
+      <img src="images/fulls/aguagarcia/agua (3).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (4).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 4">
+      <img src="images/fulls/aguagarcia/agua (4).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (5).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 5">
+      <img src="images/fulls/aguagarcia/agua (5).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (6).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 6">
+      <img src="images/fulls/aguagarcia/agua (6).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (7).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 7">
+      <img src="images/fulls/aguagarcia/agua (7).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (8).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 8">
+      <img src="images/fulls/aguagarcia/agua (8).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (9).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 9">
+      <img src="images/fulls/aguagarcia/agua (9).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (10).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 10">
+      <img src="images/fulls/aguagarcia/agua (10).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (11).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 11">
+      <img src="images/fulls/aguagarcia/agua (11).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (12).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 12">
+      <img src="images/fulls/aguagarcia/agua (12).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (13).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 13">
+      <img src="images/fulls/aguagarcia/agua (13).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (14).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 14">
+      <img src="images/fulls/aguagarcia/agua (14).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (15).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 15">
+      <img src="images/fulls/aguagarcia/agua (15).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (16).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 16">
+      <img src="images/fulls/aguagarcia/agua (16).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (17).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 17">
+      <img src="images/fulls/aguagarcia/agua (17).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (18).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 18">
+      <img src="images/fulls/aguagarcia/agua (18).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (19).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 19">
+      <img src="images/fulls/aguagarcia/agua (19).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (20).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 20">
+      <img src="images/fulls/aguagarcia/agua (20).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (21).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 21">
+      <img src="images/fulls/aguagarcia/agua (21).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (22).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 22">
+      <img src="images/fulls/aguagarcia/agua (22).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (23).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 23">
+      <img src="images/fulls/aguagarcia/agua (23).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (24).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 24">
+      <img src="images/fulls/aguagarcia/agua (24).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (25).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 25">
+      <img src="images/fulls/aguagarcia/agua (25).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (26).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 26">
+      <img src="images/fulls/aguagarcia/agua (26).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (27).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 27">
+      <img src="images/fulls/aguagarcia/agua (27).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (28).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 28">
+      <img src="images/fulls/aguagarcia/agua (28).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (29).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 29">
+      <img src="images/fulls/aguagarcia/agua (29).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (30).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 30">
+      <img src="images/fulls/aguagarcia/agua (30).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (31).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 31">
+      <img src="images/fulls/aguagarcia/agua (31).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (32).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 32">
+      <img src="images/fulls/aguagarcia/agua (32).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (33).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 33">
+      <img src="images/fulls/aguagarcia/agua (33).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (34).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 34">
+      <img src="images/fulls/aguagarcia/agua (34).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (35).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 35">
+      <img src="images/fulls/aguagarcia/agua (35).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (36).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 36">
+      <img src="images/fulls/aguagarcia/agua (36).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (37).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 37">
+      <img src="images/fulls/aguagarcia/agua (37).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (38).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 38">
+      <img src="images/fulls/aguagarcia/agua (38).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (39).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 39">
+      <img src="images/fulls/aguagarcia/agua (39).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (40).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 40">
+      <img src="images/fulls/aguagarcia/agua (40).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (41).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 41">
+      <img src="images/fulls/aguagarcia/agua (41).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (42).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 42">
+      <img src="images/fulls/aguagarcia/agua (42).jpg" alt="">
+    </a>
+  </div>
+  <div class="gallery-item">
+    <a href="images/fulls/aguagarcia/agua (43).jpg" data-lightbox="aguagarcia" data-title="Aguagarcía 43">
+      <img src="images/fulls/aguagarcia/agua (43).jpg" alt="">
+    </a>
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>

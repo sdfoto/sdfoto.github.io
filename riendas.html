@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>silviateca</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- CSS interno -->
+    <style>
+    #gallery {
+        column-count: 3;
+        column-gap: 10px;
+        padding: 10px;
+        background-color: #2c2c2c;
+    }
+
+    .gallery-item {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0px;
+    }
+
+    .gallery-item::after {
+        content: "👁️";
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font-size: 1.2em;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        background: none;
+        padding: 0;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+    }
+
+    /* Imagen destacada en vertical */
+    .vertical-grande img {
+        height: 600px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen aún más alta */
+    .extra-alta img {
+        height: 800px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Imagen cuadrada */
+    .cuadrada img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    body {
+        font-family: raleway, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #wrapper {
+        width: 100%;
+    }
+
+    .imagen-con-texto {
+        position: relative;
+        display: inline-block;
+    }
+
+    .imagen-con-texto img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-superpuesto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #gallery {
+            column-count: 1;
+            padding: 0 10px;
+        }
+
+        .vertical-grande img,
+        .extra-alta img,
+        .cuadrada img {
+            height: auto;
+            object-fit: contain;
+        }
+
+        .gallery-item::after {
+            font-size: 1em;
+            bottom: 4px;
+            right: 4px;
+        }
+
+        #hero h1 {
+            font-size: 2em;
+        }
+
+        #hero a {
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+    }
+</style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <!-- Sección de encabezado específica para Caldera -->
+        <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
+            <h1 style="font-size: 3em; margin-bottom: 10px; color:black;">Centro Hípico las Riendas</h1>
+            <!--<p style="font-size: 1.5em; margin-bottom: 20px;"></p>-->
+            <a href="#gallery" style="text-decoration: none; padding: 10px 20px; background: #f56a6a; color: #fff; font-size: 1.2em; border-radius: 5px;">!Qué disfrutes!</a>
+        </section>
+
+<div id="gallery">
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (1).jpg" data-lightbox="riendas" data-title="Riendas 1">
+            <img src="images/fulls/riendas/riendas (1).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (2).jpg" data-lightbox="riendas" data-title="Riendas 2">
+            <img src="images/fulls/riendas/riendas (2).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (3).jpg" data-lightbox="riendas" data-title="Riendas 3">
+            <img src="images/fulls/riendas/riendas (3).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (4).jpg" data-lightbox="riendas" data-title="Riendas 4">
+            <img src="images/fulls/riendas/riendas (4).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (5).jpg" data-lightbox="riendas" data-title="Riendas 5">
+            <img src="images/fulls/riendas/riendas (5).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (6).jpg" data-lightbox="riendas" data-title="Riendas 6">
+            <img src="images/fulls/riendas/riendas (6).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (7).jpg" data-lightbox="riendas" data-title="Riendas 7">
+            <img src="images/fulls/riendas/riendas (7).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (8).jpg" data-lightbox="riendas" data-title="Riendas 8">
+            <img src="images/fulls/riendas/riendas (8).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (9).jpg" data-lightbox="riendas" data-title="Riendas 9">
+            <img src="images/fulls/riendas/riendas (9).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (10).jpg" data-lightbox="riendas" data-title="Riendas 10">
+            <img src="images/fulls/riendas/riendas (10).jpg" alt="">
+        </a>
+    </div>
+    <div class="gallery-item">
+        <a href="images/fulls/riendas/riendas (11).jpg" data-lightbox="riendas" data-title="Riendas 11">
+            <img src="images/fulls/riendas/riendas (11).jpg" alt="">
+        </a>
+    </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>
