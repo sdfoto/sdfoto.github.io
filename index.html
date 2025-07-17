@@ -1,226 +1,180 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-    <title>sd · foto</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-      /* Reset y tipografías */
-      body {
-        margin: 0;
-        padding: 0;
-        background: #242629;
-        color: #fff;
-        font-family: "Source Sans Pro", sans-serif;
-      }
-      #wrapper {
-        padding: 20px;
-      }
-      /* Hero */
-      #hero {
-        text-align: center;
-        padding: 100px 20px;
-        background: #242629;
-        color: #fff;
-      }
-      #hero h1 {
-        font-size: 3.5em;
-        margin-bottom: 20px;
-      }
-      #hero p {
-        font-size: 1.5em;
-        margin-bottom: 30px;
-      }
-      /* Header */
-      #header {
-        margin-bottom: 40px;
-      }
-      #header h1 a {
-        color: #fff;
-        text-decoration: none;
-      }
-      #header nav ul {
-        list-style: none;
-        padding: 0;
-      }
-      #header nav li {
-        display: inline-block;
-        margin-right: 10px;
-      }
-      #header nav a {
-        color: #fff;
-        text-decoration: none;
-      }
-      /* Galería dinámica */
-      #gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        padding: 0 20px 20px;
-      }
-      .gallery-item {
-        overflow: hidden;
-      }
-      .gallery-item img {
-        width: 100%;
-        display: block;
-        border-radius: 0;
-        margin-bottom: 0;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .gallery-item:hover img {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      }
-      /* Footer */
-      #footer {
-        margin-top: 60px;
-        background: #1e1e1f;
-        padding: 40px 20px;
-      }
-      #footer h2 {
-        color: #fff;
-      }
-      #footer input,
-      #footer textarea {
-        width: 100%;
-        background: #2c2c2e;
-        border: none;
-        color: #fff;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 4px;
-      }
-      #footer .actions input.primary {
-        background: #6a8064;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-      }
-      /* Responsive */
-      @media screen and (max-width: 768px) {
-        #gallery {
-          grid-template-columns: 1fr;
-          padding: 0 10px 10px;
-        }
-        #hero h1 {
-          font-size: 2em;
-        }
-        #hero p,
-        #header nav a {
-          font-size: 1em;
-        }
-      }
-    </style>
-</head>
-<body class="is-preload">
-  <div id="wrapper">
 
-    <!-- Portada -->
-    <section id="hero">
-      <h1>Vida en imágenes</h1>
-      <p>by Silvia · Disfruta navegando</p>
+    <html>
+    	<head>
+    		<title>sd · foto</title>
+    		<meta charset="utf-8" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    		<link rel="stylesheet" href="assets/css/main.css" /> <!--desde donde se carga el icono del pie de pagina -->
+    		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    	</head>
+    	<body class="is-preload">
+	<div id="wrapper">
+		
+<!-- Portada -->
+
+    <section id="hero" style="text-align: center; padding: 100px 20px; background: 242629; color: white;">
+        <h1 style="font-size: 3.5em; margin-bottom: 20px; color: white;">sd · foto</h1>
+        <p style="font-size: 1.5em; margin-bottom: 30px;">Bienvenid· Que disfrutes</p>
     </section>
 
-    <!-- Cabecera -->
-    <header id="header">
-      <h1><a href="index.html"><strong>sd · foto</strong></a></h1>
-      <nav>
-        <ul>
-          <li><a href="#footer" class="icon solid fa-info-circle">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+<!-- Header -->
 
-    <!-- Galería dinámica -->
-    <div id="gallery"></div>
+		<header id="header">
+		    <h1><a href="index.html"><strong>Vida en imágenes</strong> by Silvia</a></h1>
+		  	<nav>
+		  	<ul>
+		  	<li><a href="#footer" class="icon solid fa-info-circle">Contacto</a></li>
+		  	</ul>
+		  	</nav>
+		</header>
 
-    <!-- Footer -->
-    <footer id="footer" class="panel">
-      <div class="inner split">
-        <section>
-          <h2>Enviar mensaje</h2>
-          <form method="post" action="#">
-            <div class="fields">
-              <div class="field half">
-                <input type="text" name="name" id="name" placeholder="Nombre" />
-              </div>
-              <div class="field half">
-                <input type="text" name="email" id="email" placeholder="Email" />
-              </div>
-              <div class="field">
-                <textarea name="message" id="message" rows="4" placeholder="Mensaje"></textarea>
-              </div>
-            </div>
-            <ul class="actions">
-              <li><input type="submit" value="Enviar" class="primary" /></li>
-              <li><input type="reset" value="Borrar" /></li>
-            </ul>
-          </form>
-        </section>
-      </div>
-    </footer>
+<!-- Main -->
 
-  </div>
+<div id="main">
+	
+	<article class="thumb">
+            <a href="images/fulls/arenasnegras/arenasnegras (4).jpg" class="image"><img src="images/thumbs/arenasnegras.jpg" alt= "" /> </a>
+	    <h2>Arenas Negras<br>5 de julio 2025</h2>
+            <p>Circular Chinyero - Montaña de la Cruz - Los Hornitos<br>
+	    desde el Área Recreativa de Arenas Negras</p>
+            <a href="arenasnegras.html" class="button">👉 Galería</a>
+	</article>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.poptrox.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+	<article class="thumb">
+            <a href="images/fulls/promemar/promemar (13).jpg" class="image"><img src="images/thumbs/promemar.jpg" alt= "" /> </a>
+            <h2>Promemar<br>25 de junio 2025</h2>
+            <p>Asociación dedicada a la defensa y conservación del medio ambiente marino</p>
+            <a href="promemar.html" class="button">👉 Galería</a>
+	</article>
 
-  <!-- Script para generar la galería -->
-  <script>
-  (function() {
-    const gallery = document.getElementById('gallery');
-    // Define aquí tus álbumes
-    const albums = [
-      { title: 'Arenas Negras · Chinyero', folder: 'arenasnegras', count: 21, page: 'arenasnegras.html' },
-      { title: 'Promemar',              folder: 'promemar',    count: 13, page: 'promemar.html'    },
-      { title: 'Huerta',                folder: 'huerta',      count: 15, page: 'huerta.html'      },
-      { title: 'Punta Teno',            folder: 'puntateno',   count: 5,  page: 'puntateno.html'   },
-      { title: 'Playa de Rojas',        folder: 'rojas2',      count: 25, page: 'rojas2.html'      },
-      { title: 'La Tahonilla',          folder: 'tahonilla',   count: 37, page: 'tahonilla.html'   },
-      { title: 'La Laguna',             folder: 'laguna',      count: 3,  page: 'laguna.html'      },
-      { title: 'ULL Jardines',          folder: 'ull',         count: 15, page: 'ull.html'         },
-      { title: 'Aguagarcía',            folder: 'aguagarcia',  count: 24, page: 'agua.html'        },
-      { title: 'Tamadite',              folder: 'tamadite',    count: 42, page: 'tamadite.html'    },
-      { title: 'La Caldera',            folder: 'caldera',     count: 2,  page: 'caldera.html'     },
-      { title: 'Las Riendas',           folder: 'riendas',     count: 6,  page: 'riendas.html'     },
-      { title: 'Playa de Rojas',        folder: 'rojas',       count: 12, page: 'rojas.html'       },
-      { title: 'El Púlpito',            folder: 'pulpito',     count: 27, page: 'pulpito.html'     }
-    ];
+	<article class="thumb">
+            <a href="images/fulls/huerta/huerta (15).jpg" class="image"><img src="images/thumbs/huerta.jpg" alt= "" /> </a>
+            <h2>Huerta<br>22 de junio 2025</h2>
+            <!--<p>Galería</p>-->
+            <a href="huerta.html" class="button">👉 Galería</a>
+	</article>
 
-    albums.forEach(album => {
-      // Miniatura principal
-      const thumb = document.createElement('article');
-      thumb.className = 'gallery-item';
-      thumb.innerHTML = `
-        <a href="images/fulls/${album.folder}/${album.folder} (1).jpg"
-           data-lightbox="gallery-${album.folder}"
-           class="image">
-          <img src="images/thumbs/${album.folder}.jpg"
-               alt="${album.title}" />
-        </a>
-      `;
-      gallery.appendChild(thumb);
+	<article class="thumb">
+            <a href="images/fulls/puntateno/puntateno (5).jpg" class="image"><img src="images/thumbs/puntateno.jpg" alt= "" /> </a>
+            <h2>Punta Teno<br>21 de junio 2025</h2>
+            <!--<p>Galería</p>-->
+            <a href="puntateno.html" class="button">👉 Galería</a>
+	</article>
 
-      // Enlaces ocultos al resto de imágenes
-      for (let i = 2; i <= album.count; i++) {
-        const link = document.createElement('a');
-        link.href = `images/fulls/${album.folder}/${album.folder} (${i}).jpg`;
-        link.setAttribute('data-lightbox', `gallery-${album.folder}`);
-        link.style.display = 'none';
-        gallery.appendChild(link);
-      }
-    });
-  })();
-  </script>
-</body>
-</html>
+	<article class="thumb">
+            <a href="images/fulls/rojas2/rojas2 (25).jpg" class="image"><img src="images/thumbs/rojas2.jpg" alt="<i></i>"></a>
+            <h2>Playa de Rojas, El Sauzal<br>3 de mayo 2025</h2>
+            <!--<p>Galería</p>-->
+            <a href="rojas2.html" class="button">👉 Galería</a>
+	</article>
+	
+	<article class="thumb">
+            <a href="images/fulls/tahonilla/tahonilla (37).jpg" class="image"><img src="images/thumbs/tahonilla.jpg" alt="<i></i>"></a>
+            <h2>Centro de recuperación, La Tahonilla<br>2 de mayo 2025</h2>
+		<!--<p>Galería</p>-->
+            <a href="tahonilla.html" class="button">👉 Galería</a>
+	</article>
+
+	<article class="thumb">
+            <a href="images/fulls/laguna/laguna (3).jpg" class="image"><img src="images/thumbs/laguna.jpg" alt="<i></i>"></a>
+            <h2>La Laguna, casco histórico<br>26 de abril 2025</h2>
+		<!--<p>Galería</p>-->
+            <a href="laguna.html" class="button">👉 Galería</a>
+	</article>
+
+	<article class="thumb">
+            <a href="images/fulls/ull/ull (15).jpg" class="image"><img src="images/thumbs/ull.jpg" alt="<i></i>"></a>
+            <h2>Jardines de la ULL<br>22 de abril 2025</h2>
+            <a href="ull.html" class="button">👉 Galería</a>
+	</article>
+
+	<article class="thumb">
+            <a href="images/fulls/aguagarcia/agua (24).jpg" class="image"><img src="images/thumbs/agua.jpg" alt="<i></i>"></a>
+            <h2>Guardianes Centanarios de Aguagarcía<br>21 de abril 2025</h2>
+            <!--<p>Galería</p>-->
+	    <a href="agua.html" class="button">👉 Galería</a>
+	</article>
+	
+	<article class="thumb">
+            <a href="images/fulls/tamadite/tamadite (42).jpg" class="image"><img src="images/thumbs/tamadite.jpg" alt="<i></i>"></a>
+            <h2>Playa de Tamadite, Afur<br>16 de abril 2025</h2>
+            <!--<p>Galería</p>-->
+	    <a href="tamadite.html" class="button">👉 Galería</a>
+	</article>
+
+	<article class="thumb">
+            <a href="images/fulls/caldera/caldera (2).jpg" class="image">
+            <img src="images/thumbs/caldera.jpg" alt= "Simbiosis maravillosa" /> </a>
+            <h2>La Caldera<br>14 de abril 2025</h2>
+            <!--<p>Galería</p>-->
+            <a href="caldera.html" class="button">👉 Galería</a>
+	</article>		
+
+	<article class="thumb">
+            <a href="images/fulls/riendas/riendas (6).jpg" class="image"><img src="images/thumbs/riendas.jpg" alt=""/></a>
+            <h2>Centro Hípico Las Riendas<br>5 de abril 2025 - Las Riendas</h2>
+	    <!--<p>Galería</p>-->
+            <a href="riendas.html" class="button">👉 Galería</a>
+	</article>	
+
+	<article class="thumb">
+            <a href="images/fulls/rojas/rojas (12).jpg" class="image"><img src="images/thumbs/rojas.jpg" alt="<i>Ocypus olens</i>"></a>
+            <h2>Playa de Rojas, El Sauzal<br>4 de abril 2025</h2>
+            <!--<p>Galería</p>-->
+            <a href="rojas.html" class="button">👉 Galería</a>
+	</article>
+			
+	<article class="thumb">
+            <a href="images/fulls/pulpito/pulpito (27).JPG" class="image"><img src="images/thumbs/pulpito.JPG" alt=""/></a>
+            <h2>El Púlpito<br>29 de marzo 2025</h2>
+	    <!--<p>Galería</p>-->
+            <a href="pulpito.html" class="button">👉 Galería</a>
+	</article>
+		
+	<!--<article class="thumb">
+            <a href="images/fulls/casa/casa (14).JPG" class="image"><img src="images/thumbs/casa.JPG" alt=""/></a>
+            <h2></h2>
+            <p>Galería</p>
+            <a href="casa.html" class="button">👉 Galería</a>
+	</article>	
+</div>
+
+<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+								<section>
+									<h2>Enviar mensaje</h2>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Nombre" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Mensaje"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Enviar" class="primary" /></li>
+											<li><input type="reset" value="Borrar" /></li>
+										</ul>
+									</form>
+								</section>
+						</div>
+					</footer>
+
+			</div>
+
+<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>. 
