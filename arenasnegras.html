@@ -11,7 +11,7 @@
     <style>
     #gallery {
         column-count: 2;
-        column-gap: 0;
+        column-gap: 10;
         padding: 0;
         background-color: #404746;
     }
@@ -19,7 +19,7 @@
         position: relative;
         display: grid;
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 10;
         overflow: hidden;
     }
     .gallery-item img {
@@ -28,6 +28,9 @@
         display: block;
         border-radius: 0;
         transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+        margin: 0;             /* eliminamos márgenes extra en la imagen */
+        padding: 2px;          /* respiradero alrededor de la imagen */
+        background-color: #404746; /* evita que el fondo oscuro se vea en el hover */
     }
     /* NUEVA REGLA: al hacer hover, escala, aclara y añade sombra */
     .gallery-item:hover img {
