@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <style>
     #gallery {
-        column-count: 2;
+        column-count: 3;
         column-gap: 5;
         padding: 5;
-        background-color: #d5dbe1;
+        background-color: #000000;
     }
     .gallery-item {
         position: relative;
@@ -23,11 +23,11 @@
         z-index: 1; /* Contexto inicial */
     }
     .gallery-item:hover {
-        z-index: 20; /* Por encima de los demás */
+        z-index: 15; /* Por encima de los demás */
         transform: translateY(-5px);
     }
     .gallery-item:hover img {
-        transform: scale(1.25);
+        transform: scale(1.1);
         box-shadow: 0 8px 20px rgba(0.4, 0.4, 0.4, 0.4);
     }
     .gallery-item img {
