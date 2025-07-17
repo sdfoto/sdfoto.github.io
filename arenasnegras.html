@@ -11,7 +11,7 @@
     <style>
     #gallery {
         column-count: 2;
-        column-gap: 10;
+        column-gap: 0;
         padding: 0;
         background-color: #404746;
     }
@@ -19,26 +19,12 @@
         position: relative;
         display: grid;
         width: 100%;
-        margin-bottom: 10;
-        overflow: hidden;
+        margin-bottom: 0;
+        overflow: visible; /* Permitimos que “salte” fuera de su contenedor */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 1; /* Contexto inicial */
     }
-    .gallery-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 0;
-        transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-        margin: 0;             /* eliminamos márgenes extra en la imagen */
-        padding: 2px;          /* respiradero alrededor de la imagen */
-        background-color: #404746; /* evita que el fondo oscuro se vea en el hover */
-    }
-    /* NUEVA REGLA: al hacer hover, escala, aclara y añade sombra */
-    .gallery-item:hover img {
-        transform: scale(1.05);
-        filter: brightness(1.15);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-    }
-
+    /* Icono “ojito” */
     .gallery-item::after {
         content: "👀";
         position: absolute;
@@ -47,13 +33,29 @@
         font-size: 1.2em;
         opacity: 0;
         transition: opacity 0.3s ease;
-        z-index: 1;
-        background: none;
-        padding: 0;
+        z-index: 2;
     }
     .gallery-item:hover::after {
         opacity: 1;
-    }  
+    }
+
+    /* Efecto hover: elevación, sombra y ligero zoom */
+    .gallery-item:hover {
+        z-index: 10; /* Por encima de los demás */
+        transform: translateY(-5px);
+    }
+    .gallery-item:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+        transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
 
     .vertical-grande img {
         height: 600px;
@@ -135,13 +137,12 @@
 <body class="is-preload">
     <div id="wrapper">
 
-        <!-- Sección de encabezado -->
+        <!-- Sección de encabezado-->
         <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
             <h1 style="font-size: 3.5em; margin-bottom: 10px; color: black;">Arenas Negras · Chinyero</h1>
             <h2 style="font-size: 2.5em; margin-bottom: 0px; color: black;">Parque Natural Especial</h2>
             <p style="font-size: 1em; margin-bottom: 20px;"></p>
-            <a href="https://es.wikiloc.com/wikiloc/view.do?pic=rutas-senderismo&slug=circular-chinyero-montana-de-la-cruz-los-hornitos-desde-el-area-recreativa-de-arenas-negras&id=169237014&rd=es" 
-                style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px; margin-right: 10px">👉 Ruta</a>
+            <a href="https://acortar.link/Q7Z7RG" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px; margin-right: 10px">👉 Ruta</a>
             <a href="" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px;">Video 👈</a>
         </section>
 
