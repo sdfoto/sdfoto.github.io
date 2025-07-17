@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <style>
+    /* Galería en columna única, luego responsiva a 3 columnas */
     #gallery {
-        column-count: 3;
-        /*column-gap: 5;*/
-        /*padding: 5;*/
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
         background-color: #ffffff;
     }
     .gallery-item {
         position: relative;
         display: grid;
         width: 100%;
-        /*margin-bottom: 10;*/
         overflow: visible;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 1; /* Contexto inicial */
+        z-index: 1;
     }
     .gallery-item:hover {
-        z-index: 15; /* Por encima de los demás */
+        z-index: 15;
         transform: translateY(-5px);
     }
     .gallery-item:hover img {
@@ -34,67 +34,31 @@
         width: 100%;
         height: auto;
         display: block;
-        border-radius: 5;
+        border-radius: 5px;
         transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
     }
-    .vertical-grande img {
-        height: 600px;
-        object-fit: cover;
-        width: 100%;
-    }
-    .extra-alta img {
-        height: 800px;
-        object-fit: cover;
-        width: 100%;
-    }
-    .cuadrada img {
-        height: 400px;
-        object-fit: cover;
-        width: 100%;
-    }
+    .vertical-grande img { height: 600px; object-fit: cover; width: 100%; }
+    .extra-alta   img { height: 800px; object-fit: cover; width: 100%; }
+    .cuadrada     img { height: 400px; object-fit: cover; width: 100%; }
     body {
         font-family: "Source Sans Pro", sans-serif;
-        margin: 10;
-        padding: 10;
+        margin: 10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    #wrapper {
-        width: 100%;
-    }
-    .imagen-con-texto {
-        position: relative;
-        display: inline-block;
-    }
-    .imagen-con-texto img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
+    #wrapper { width: 100%; }
+    .imagen-con-texto { position: relative; display: inline-block; }
+    .imagen-con-texto img { display: block; width: 100%; height: auto; }
     @media screen and (max-width: 768px) {
-        #gallery {
-            column-count: 1;
-            padding: 0;
-        }
+        #gallery { grid-template-columns: 1fr; padding: 0; }
         .vertical-grande img,
         .extra-alta img,
-        .cuadrada img {
-            height: auto;
-            object-fit: contain;
-        }
-        .gallery-item::after {
-            font-size: 1.2em;
-            bottom: 4px;
-            right: 4px;
-        }
-        #hero h1 {
-            font-size: 2em;
-        }
-        #hero a {
-            font-size: 1em;
-            padding: 8px 16px;
-        }
+        .cuadrada img { height: auto; object-fit: contain; }
+        .gallery-item::after { font-size: 1.2em; bottom: 4px; right: 4px; }
+        #hero h1 { font-size: 2em; }
+        #hero a      { font-size: 1em; padding: 8px 16px; }
     }
     </style>
 </head>
@@ -104,146 +68,25 @@
             padding: 100px 20px; 
             background: white; 
             color: black;">
-            <h1 style="font-size: 3.5em; 
-                margin-bottom: 10px; 
-                color: black;
-                ">Arenas Negras · Chinyero
+            <h1 style="font-size: 3.5em; margin-bottom: 10px; color: black;">
+                Arenas Negras · Chinyero
             </h1>
-            <h2 style="font-size: 2em; 
-                margin-bottom: 0px; 
-                color: black;
-                ">Parque Natural Especial <br>
+            <h2 style="font-size: 2em; margin-bottom: 0px; color: black;">
+                Parque Natural Especial
             </h2>
-            <p style="font-size: 1.5em; 
-                margin-bottom: 20px;">
-            </p>
+            <p style="font-size: 1.5em; margin-bottom: 20px;"></p>
             <a href="https://es.wikiloc.com/wikiloc/view.do?pic=rutas-senderismo&slug=circular-chinyero-montana-de-la-cruz-los-hornitos-desde-el-area-recreativa-de-arenas-negras&id=169237014&rd=es" 
-                style="text-decoration: none; 
-                padding: 10px 10px; 
-                background: #6a8064; 
-                color: #fff; 
-                font-size: 1em; 
-                border-radius: 5px; 
-                margin-right: 10px">👉 Ruta
+               style="text-decoration: none; padding: 10px; background: #6a8064; color: #fff; font-size: 1em; border-radius: 5px; margin-right: 10px">
+               👉 Ruta
             </a>
-            <a href="" style="text-decoration: none; 
-                padding: 10px 10px; 
-                background: #6a8064; 
-                color: #fff; 
-                font-size: 1em; 
-                border-radius: 5px;
-                ">Video 👈
+            <a href="" 
+               style="text-decoration: none; padding: 10px; background: #6a8064; color: #fff; font-size: 1em; border-radius: 5px;">
+               Video 👈
             </a>
         </section>
 
-<!-- Lista de imágenes -->
-<div id="gallery">
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (1).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (1).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (4).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (2).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (7).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (3).jpg" alt="">
-    </a>
-  </div> <br>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (10).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (4).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (13).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (5).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (16).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (6).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (19).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (7).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (2).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (8).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (5).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (9).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (8).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (10).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (11).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (11).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (14).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (12).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (17).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (13).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (20).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (14).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (3).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (15).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (6).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (16).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (9).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (17).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (12).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (18).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (15).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (19).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (18).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (20).jpg" alt="">
-    </a>
-  </div>
-  <div class="gallery-item">
-    <a href="images/fulls/arenasnegras/arenasnegras (21).jpg" data-lightbox="" data-title="">
-      <img src="images/fulls/arenasnegras/arenasnegras (21).jpg" alt="">
-    </a>
-  </div>
-</div>
+        <!-- Contenedor vacío: el script inyecta los items -->
+        <div id="gallery"></div>
 
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
@@ -251,6 +94,32 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+        <!-- Script para generar la galería dinámicamente -->
+        <script>
+        (function() {
+          const gallery = document.getElementById('gallery');
+          // Especifica aquí el orden de tus fotos:
+          const order = [1,4,7,10,13,16,19,2,5,8,11,14,17,20,3,6,9,12,15,18,21];
+          order.forEach(n => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            const link = document.createElement('a');
+            link.href = `images/fulls/arenasnegras/arenasnegras (${n}).jpg`;
+            link.setAttribute('data-lightbox', 'gallery');
+            
+            const img = document.createElement('img');
+            img.src = `images/fulls/arenasnegras/arenasnegras (${n}).jpg`;
+            img.alt = `Arenas Negras foto ${n}`;
+            
+            link.appendChild(img);
+            item.appendChild(link);
+            gallery.appendChild(item);
+          });
+        })();
+        </script>
+
     </div>
 </body>
 </html>
