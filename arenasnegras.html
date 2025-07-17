@@ -5,52 +5,143 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
     <!-- CSS interno -->
     <style>
-    #gallery {column-count: 2; column-gap: 0px; padding: 0px; background-color: #404746;}
-    .gallery-item {position: relative; display: grid; width: 100%; margin-bottom: 0px; overflow: hidden;}
-    .gallery-item img {width: 100%; height: auto; display: block; border-radius: 0px; transition: transform 0.3s ease, filter 0.3s ease;}
-    .gallery-item::after {content: "👀"; position: absolute; bottom: 8px; right: 8px; font-size: 1.2em; opacity: 0; transition: opacity 0.3s ease; z-index: 1; background: none; padding: 0;}
-    .gallery-item:hover::after {opacity: 1;}  
-    
-    .vertical-grande img {height: 600px; object-fit: cover; width: 100%;} /* Imagen destacada en vertical */
-    .extra-alta img {height: 800px; object-fit: cover; width: 100%;} /* Imagen aún más alta */
-    .cuadrada img {height: 400px; object-fit: cover; width: 100%;} /* Imagen cuadrada */
-        
-    body {font-family: "Source Sans Pro", sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center;}
-    #wrapper {width: 100%;}
-        
-    .imagen-con-texto {position: relative; display: inline-block;}
-    .imagen-con-texto img {display: block; width: 100%; height: auto;}
-    .texto-superpuesto {position: absolute; top: 70%; left: 70%; transform: translate(-50%, -50%); color: white; font-size: 0.8em; font-weight: bold; text-shadow: 1px 1px 4px black; text-align: center; padding: 10px;}
-   
-    @media screen and (max-width: 768px)
-    {#gallery
-         {column-count: 1; padding: 0 0px;}
+    #gallery {
+        column-count: 2;
+        column-gap: 0;
+        padding: 0;
+        background-color: #404746;
+    }
+    .gallery-item {
+        position: relative;
+        display: grid;
+        width: 100%;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+        transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    }
+    /* NUEVA REGLA: al hacer hover, escala, aclara y añade sombra */
+    .gallery-item:hover img {
+        transform: scale(1.05);
+        filter: brightness(1.15);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    }
+
+    .gallery-item::after {
+        content: "👀";
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font-size: 1.2em;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        background: none;
+        padding: 0;
+    }
+    .gallery-item:hover::after {
+        opacity: 1;
+    }  
+
+    .vertical-grande img {
+        height: 600px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .extra-alta img {
+        height: 800px;
+        object-fit: cover;
+        width: 100%;
+    }
+    .cuadrada img {
+        height: 400px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    body {
+        font-family: "Source Sans Pro", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #wrapper {
+        width: 100%;
+    }
+
+    .imagen-con-texto {
+        position: relative;
+        display: inline-block;
+    }
+    .imagen-con-texto img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .texto-superpuesto {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-shadow: 1px 1px 4px black;
+        text-align: center;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #gallery {
+            column-count: 1;
+            padding: 0;
+        }
         .vertical-grande img,
         .extra-alta img,
-        .cuadrada img {height: auto; object-fit: contain;}
-        .gallery-item::after {font-size: 1.2em; bottom: 4px; right: 4px;}
-        #hero h1 {font-size: 2em;}
-        #hero a {font-size: 1em; padding: 8px 16px;}}
-</style>
+        .cuadrada img {
+            height: auto;
+            object-fit: contain;
+        }
+        .gallery-item::after {
+            font-size: 1.2em;
+            bottom: 4px;
+            right: 4px;
+        }
+        #hero h1 {
+            font-size: 2em;
+        }
+        #hero a {
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+    }
+    </style>
 </head>
-    
+
 <body class="is-preload">
     <div id="wrapper">
-        
-<!-- Sección de encabezado-->
+
+        <!-- Sección de encabezado -->
         <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
             <h1 style="font-size: 3.5em; margin-bottom: 10px; color: black;">Arenas Negras · Chinyero</h1>
-            <h2 style="font-size: 2.5em; margin-bottom: 0px; color: black;">Parque Natural Especial</h1>
+            <h2 style="font-size: 2.5em; margin-bottom: 0px; color: black;">Parque Natural Especial</h2>
             <p style="font-size: 1em; margin-bottom: 20px;"></p>
             <a href="https://acortar.link/Q7Z7RG" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px; margin-right: 10px">👉 Ruta</a>
             <a href="" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px;">Video 👈</a>
         </section>
 
-<!-- Lista de imágenes -->
+        <!-- Lista de imágenes -->
 <div id="gallery">
   <div class="gallery-item">
     <a href="images/fulls/arenasnegras/arenasnegras (1).jpg" data-lightbox="" data-title="">
@@ -209,12 +300,12 @@
   </div>
 </div>
 
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    </div>
 </body>
 </html>
