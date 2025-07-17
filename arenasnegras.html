@@ -36,13 +36,10 @@
         border-radius: 0px;
         transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
     }
-    .vertical-grande img { height: 600px; object-fit: cover; width: 100%; }
-    .extra-alta   img { height: 800px; object-fit: cover; width: 100%; }
-    .cuadrada     img { height: 400px; object-fit: cover; width: 100%; }
+    /*.vertical-grande img { height: 600px; object-fit: cover; width: 100%; }
+    .extra-alta img { height: 800px; object-fit: cover; width: 100%; }
+    .cuadrada img { height: 400px; object-fit: cover; width: 100%; }*/
 
-    /*#wrapper { width: 100%; }
-    .imagen-con-texto { position: relative; display: inline-block; }
-    .imagen-con-texto img { display: block; width: 100%; height: auto; }*/
     @media screen and (max-width: 768px) {
         #gallery { grid-template-columns: 1fr; padding: 0; }
         .vertical-grande img,
@@ -50,10 +47,10 @@
         .cuadrada img { height: auto; object-fit: contain; }
         .gallery-item::after { font-size: 1.2em; bottom: 4px; right: 4px; }
         #hero h1 { font-size: 2em; }
-        #hero a      { font-size: 1em; padding: 8px 16px; }
+        #hero a { font-size: 1em; padding: 8px 16px; }
     }
     </style>
-</head>
+</head>    
 <body class="is-preload">
     <div id="wrapper">
         <section id="hero" style="text-align: center; 
@@ -76,8 +73,7 @@
                Video 👈
             </a>
         </section>
-
-<div id="gallery"></div>
+        <div id="gallery"></div>
 
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
