@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
-    <!-- CSS interno -->
     <style>
     #gallery {
         column-count: 2;
@@ -24,8 +23,6 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         z-index: 1; /* Contexto inicial */
     }
-
-
     /* Efecto hover: elevación, sombra y ligero zoom */
     .gallery-item:hover {
         z-index: 10; /* Por encima de los demás */
@@ -35,7 +32,6 @@
         transform: scale(1.05);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-
     .gallery-item img {
         width: 100%;
         height: auto;
@@ -43,7 +39,6 @@
         border-radius: 0;
         transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
     }
-
     .vertical-grande img {
         height: 600px;
         object-fit: cover;
@@ -59,7 +54,6 @@
         object-fit: cover;
         width: 100%;
     }
-
     body {
         font-family: "Source Sans Pro", sans-serif;
         margin: 0;
@@ -71,7 +65,6 @@
     #wrapper {
         width: 100%;
     }
-
     .imagen-con-texto {
         position: relative;
         display: inline-block;
@@ -93,7 +86,6 @@
         text-align: center;
         padding: 10px;
     }
-
     @media screen and (max-width: 768px) {
         #gallery {
             column-count: 1;
@@ -120,20 +112,44 @@
     }
     </style>
 </head>
-
 <body class="is-preload">
     <div id="wrapper">
-
-        <!-- Sección de encabezado-->
-        <section id="hero" style="text-align: center; padding: 100px 20px; background: white; color: black;">
-            <h1 style="font-size: 3.5em; margin-bottom: 10px; color: black;">Arenas Negras · Chinyero</h1>
-            <h2 style="font-size: 2.5em; margin-bottom: 0px; color: black;">Parque Natural Especial</h2>
-            <p style="font-size: 1em; margin-bottom: 20px;"></p>
-            <a href="https://acortar.link/Q7Z7RG" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px; margin-right: 10px">👉 Ruta</a>
-            <a href="" style="text-decoration: none; padding: 10px 10px; background: #a3e4d7; color: #fff; font-size: 1.2em; border-radius: 5px;">Video 👈</a>
+        <section id="hero" style="text-align: center; 
+            padding: 100px 20px; 
+            background: white; 
+            color: black;">
+            <h1 style="font-size: 3.5em; 
+                margin-bottom: 10px; 
+                color: black;
+                ">Arenas Negras · Chinyero
+            </h1>
+            <h2 style="font-size: 2.5em; 
+                margin-bottom: 0px; 
+                color: black;
+                ">Parque Natural Especial
+            </h2>
+            <p style="font-size: 1em; 
+                margin-bottom: 20px;">
+            </p>
+            <a href="https://es.wikiloc.com/wikiloc/view.do?pic=rutas-senderismo&slug=circular-chinyero-montana-de-la-cruz-los-hornitos-desde-el-area-recreativa-de-arenas-negras&id=169237014&rd=es" 
+                style="text-decoration: none; 
+                padding: 10px 10px; 
+                background: #a3e4d7; 
+                color: #fff; 
+                font-size: 1.2em; 
+                border-radius: 5px; 
+                margin-right: 10px">👉 Ruta
+            </a>
+            <a href="" style="text-decoration: none; 
+                padding: 10px 10px; 
+                background: #a3e4d7; 
+                color: #fff; 
+                font-size: 1.2em; 
+                border-radius: 5px;
+                ">Video 👈</a>
         </section>
 
-        <!-- Lista de imágenes -->
+<!-- Lista de imágenes -->
 <div id="gallery">
   <div class="gallery-item">
     <a href="images/fulls/arenasnegras/arenasnegras (1).jpg" data-lightbox="" data-title="">
