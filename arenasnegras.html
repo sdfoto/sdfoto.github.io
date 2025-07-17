@@ -24,20 +24,7 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         z-index: 1; /* Contexto inicial */
     }
-    /* Icono “ojito” */
-    .gallery-item::after {
-        content: "👀";
-        position: absolute;
-        bottom: 8px;
-        right: 8px;
-        font-size: 1.2em;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 2;
-    }
-    .gallery-item:hover::after {
-        opacity: 1;
-    }
+
 
     /* Efecto hover: elevación, sombra y ligero zoom */
     .gallery-item:hover {
