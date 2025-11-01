@@ -8,6 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
+
+<script>
+document.querySelectorAll('img').forEach(img => {
+  if (!img.hasAttribute('loading')) img.loading = 'lazy';
+  if (!img.hasAttribute('decoding')) img.decoding = 'async';
+});
+</script>
+	
 <body class="is-preload">
     <div id="wrapper">
     	<section id="hero" style="text-align: center; 
@@ -281,6 +289,7 @@
 	</script>
 </body>
 </html> 
+
 
 
 
