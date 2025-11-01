@@ -31,11 +31,6 @@
         display: block;
     }
     
-    /* Tamaños variables para las fotos */
-    .thumb:nth-child(3n+1) { grid-row: span 2; }
-    .thumb:nth-child(5n+2) { grid-column: span 2; }
-    .thumb:nth-child(7n+3) { grid-row: span 1; }
-    
     @media (max-width: 768px) {
         #main {
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -325,5 +320,6 @@ document.querySelectorAll('img').forEach(img => {
 	</script>
 </body>
 </html> 
+
 
 
