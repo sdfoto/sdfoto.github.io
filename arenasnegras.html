@@ -6,60 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
- <style>
-    /* Estilo general */
-    body {
-        font-family: 'Source Sans Pro', sans-serif;
-        background-color: #f1f3f6;
-        margin: 0;
-        padding: 0;
-    }
-  
-    .gallery-item img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px; /* Redondea las esquinas de la imagen */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: all .3s ease-in-out;
-    }
-  
-    .gallery-item img:hover {
-        transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar por encima */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  
-    #gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Crea una cuadrícula de 3 columnas */
-        gap: 20px; /* Espacio entre las imágenes */
-        padding: 40px;
-    }
-  
-    #hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* El tamaño de la pantalla completa en vertical */
-        text-align: center;
-        color: white;
-        background-color: #242629;
-    }
-  
-    #hero h1 {
-        font-size: 3em;
-        margin-bottom: 0.5em;
-    }
-    
-    #hero a {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #6a8064;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 20px;
-    }
+<style>
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #F2F3F7;
+    color: #404E68;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 60px auto;
+  }
+
+  .gallery-item {
+    position: relative;
+    width: 28%;
+    overflow: hidden;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 25px auto;
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item img:hover {
+    transform: scale(1.2);
+  }
 </style>
+
 
 </head>    
 <body class="is-preload">
