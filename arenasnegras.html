@@ -14,11 +14,11 @@
 		padding: 100px 20px; 
 		background: #242629; 
 		color: white;">
-        	<h1 style="font-size: 3.5em; 
+        	<h1 style="font-size: 3.0em; 
 			margin-bottom: 20px; 
 			color: white;
 			">Arenas Negras · Chinyero</h1>
-        	<p style="font-size: 1.5em; 
+        	<p style="font-size: 1.3em; 
 			margin-bottom: 30px;
 			">Parque Natural Especial</p>
             <a href="https://es.wikiloc.com/wikiloc/view.do?pic=rutas-senderismo&slug=circular-chinyero-montana-de-la-cruz-los-hornitos-desde-el-area-recreativa-de-arenas-negras&id=169237014&rd=es" 
@@ -33,7 +33,7 @@
 		 <header id="header">
 			<h1>
 				<a href="index.html">
-				<strong>Vida en imágenes</strong>HOME
+				<strong>inicio</strong> by silvia
 				</a>
 			</h1>
 			<nav>
@@ -47,15 +47,19 @@
 		</header>
     </div>
 </head>
-<style>
-  body {
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: #F2F3F7;
-    color: #404E68;
-    line-height: 1.5em;
-    margin: 0;
-    padding: 0;
-  }
+
+<body class="is-preload">
+<div id="wrapper">
+<div id="gallery">
+    <img src="images/fulls/arenasnegras/arenasnegras (1).jpg" alt="" />
+	<img src="images/fulls/arenasnegras/arenasnegras (2).jpg" alt="" />
+	<img src="images/fulls/arenasnegras/arenasnegras (3).jpg" alt="" />
+	<img src="images/fulls/arenasnegras/arenasnegras (4).jpg" alt="" />
+	<img src="images/fulls/arenasnegras/arenasnegras (5).jpg" alt="" />
+	<img src="images/fulls/arenasnegras/arenasnegras (6).jpg" alt="" />
+</div>
+	
+<style>	
   #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -82,43 +86,13 @@
     transform: scale(1.2);
   }
 </style>
- 
-<body class="is-preload">
-    <div id="wrapper">
-        <div id="gallery"></div>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
-        <!-- Script para generar la galería dinámicamente -->
-        <script>
-        (function() {
-          const gallery = document.getElementById('gallery');
-          // Especifica aquí el orden de tus fotos:
-          const order = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
-          order.forEach(n => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            
-            const link = document.createElement('a');
-            link.href = `images/fulls/arenasnegras/arenasnegras (${n}).jpg`;
-            link.setAttribute('data-lightbox', 'gallery');
-            
-            const img = document.createElement('img');
-            img.src = `images/fulls/arenasnegras/arenasnegras (${n}).jpg`;
-            img.alt = `Arenas Negras foto ${n}`;
-            
-            link.appendChild(img);
-            item.appendChild(link);
-            gallery.appendChild(item);
-          });
-        })();
-        </script>
-
-    </div>
+</div>
 </body>
 </html>
