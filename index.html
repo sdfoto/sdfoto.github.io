@@ -21,6 +21,10 @@
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
+background: #111; /* para bandas laterales en contain */
+display: flex;
+align-items: center;
+justify-content: center;
 		aspect-ratio: 1;
     }
         
@@ -33,19 +37,24 @@
     
     @media (max-width: 768px) {
         #main {
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         }
     }
+	@media (min-width: 1024px) {
+    #main { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+}
+.thumb img {
+      width: 100%;
+      height: auto;            /* mantiene proporción natural */
+      object-fit: contain;     /* nada de recortes */
+    }
+  }
+	
 </style>
 	
 </head>
 
-<script>
-document.querySelectorAll('img').forEach(img => {
-  if (!img.hasAttribute('loading')) img.loading = 'lazy';
-  if (!img.hasAttribute('decoding')) img.decoding = 'async';
-});
-</script>
+
 	
 <body class="is-preload">
     <div id="wrapper">
@@ -303,8 +312,15 @@ document.querySelectorAll('img').forEach(img => {
 	</script>
 	<script src="assets/js/main.js" defer>
 	</script>
+		<script>
+document.querySelectorAll('img').forEach(img => {
+  if (!img.hasAttribute('loading')) img.loading = 'lazy';
+  if (!img.hasAttribute('decoding')) img.decoding = 'async';
+});
+</script>
 </body>
 </html> 
+
 
 
 
