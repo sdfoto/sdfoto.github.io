@@ -8,29 +8,64 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 <style>
+:root{ --page-max:1200px; }
+
+/* Centrar toda la página */
+body{ margin:0; background:#0f1113; color:#eaeaea; font-family:"Source Sans Pro", system-ui, sans-serif; }
+#wrapper, #header, #footer .inner{ 
+  max-width: var(--page-max);
+  margin-inline: auto;           /* centra horizontalmente */
+  padding-inline: 12px;
+}
+
+/* Cabecera centrada */
+#header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+/* GRID centrada y responsiva */
 #main{
+  display:grid;
+  gap:12px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  justify-items: center;         /* centra cada “tile” */
+  margin: 24px auto;             /* centra el bloque */
+}
+
+/* Tarjetas */
 .thumb{
   position:relative;
   overflow:hidden;
   border-radius:8px;
-  box-shadow:0 2px 5px rgba(0,0,0,.1);
-  transition:transform .3s ease;
+  box-shadow:0 2px 5px rgba(0,0,0,.18);
   background:#111;
   display:flex;
   align-items:center;
   justify-content:center;
-  aspect-ratio:1 / 1;
-	margin: 8px;
-}}
+  aspect-ratio:1/1;
+  width:100%;                    /* ocupa la columna completa */
+  max-width: 520px;              /* evita que crezca demasiado en filas con pocas columnas */
+}
 .thumb img{
   width:100%;
   height:100%;
-  object-fit:cover;       
-  display:flex;
-}*/
+  object-fit:cover;
+  display:block;
+}
 
-@media (max-width:768px){
- 	#main{ grid-template-columns:repeat(auto-fill, minmax(200px, 1fr)); }}
+/* Titulares dentro de las tarjetas (si los usas) */
+.thumb h2{
+  position:absolute; inset:auto 8px 8px 8px;
+  margin:0; padding:.35rem .5rem;
+  background:rgba(0,0,0,.45);
+  color:#fff; font-weight:600; line-height:1.2; border-radius:6px;
+}
+
+/* Hero centrado a lo ancho (ya lo tenías) */
+#hero{ text-align:center; padding:100px 10px; background:#242629; color:#fff; }
+
+/* Responsivo */
+@media (max-width: 768px){
+  #main{ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
 @media (min-width: 1024px){
 	#main{ grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); }}
 							
@@ -303,6 +338,7 @@ document.querySelectorAll('img').forEach(img => {
 </script>
 </body>
 </html> 
+
 
 
 
