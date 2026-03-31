@@ -334,20 +334,31 @@ document.querySelectorAll('img').forEach(img => {
 
   const thumbs = Array.from(main.querySelectorAll('article.thumb'));
   const blankPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
   thumbs.forEach((thumb) => {
     const img = thumb.querySelector('img');
     if (!img) return;
     const currentSrc = img.getAttribute('src');
-    if (currentSrc) {
-      img.dataset.src = currentSrc;
-      img.src = blankPixel;
-    }
+    if (!currentSrc) return;
+    img.dataset.src = currentSrc;
+    img.src = blankPixel;
   });
+
+  const ensureThumbLoaded = (thumb) => {
+    const img = thumb.querySelector('img');
+    const imageLink = thumb.querySelector('a.image');
+    if (!img?.dataset.src || !imageLink) return;
+    if (img.dataset.loaded === 'true') return;
+
+    img.src = img.dataset.src;
+    imageLink.style.backgroundImage = `url(${img.dataset.src})`;
+    img.dataset.loaded = 'true';
+  };
 
   if (thumbs.length <= itemsPerPage) {
     thumbs.forEach((thumb, index) => {
       const img = thumb.querySelector('img');
-      if (img?.dataset.src) img.src = img.dataset.src;
+      ensureThumbLoaded(thumb);
       if (img) img.loading = index < 6 ? 'eager' : 'lazy';
     });
     pagination.hidden = true;
@@ -372,10 +383,7 @@ document.querySelectorAll('img').forEach(img => {
       thumb.style.display = isVisible ? '' : 'none';
       const img = thumb.querySelector('img');
       if (!img) return;
-
-      if (isVisible && img.dataset.src && img.getAttribute('src') !== img.dataset.src) {
-        img.src = img.dataset.src;
-      }
+      if (isVisible) ensureThumbLoaded(thumb);
       img.loading = index < start + 6 ? 'eager' : 'lazy';
     });
 
@@ -427,57 +435,3 @@ document.querySelectorAll('img').forEach(img => {
 </script>
 </body>
 </html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
