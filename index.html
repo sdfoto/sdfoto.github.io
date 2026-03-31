@@ -9,7 +9,6 @@
 
 <style> 
 		.thumb{ grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-				position:center; 
 			   overflow:hidden; 
 			   border-radius:8px; 
 			   box-shadow:0 2px 5px rgba(0,0,0,.1); 
@@ -23,7 +22,7 @@
 	.thumb img{ width:100%; 
 			   height:100%; 
 			   object-fit:cover; 
-			   display:flex; }*/ 
+			   display:flex; } 
 	@media (max-width:768px){ 
 		#main{ grid-template-columns:
 			repeat(auto-fill, 
@@ -32,6 +31,39 @@
 		#main{ grid-template-columns:
 			repeat(auto-fill, 
 			minmax(260px, 1fr)); }} 
+	.gallery-pagination {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 12px 8px;
+	}
+	.gallery-pagination button {
+		background: #2f3238;
+		color: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 6px;
+		padding: 8px 12px;
+		cursor: pointer;
+		font: inherit;
+	}
+	.gallery-pagination button:hover:not(:disabled) {
+		background: #3b3f47;
+	}
+	.gallery-pagination button.active {
+		background: #fff;
+		color: #1f2125;
+	}
+	.gallery-pagination button:disabled {
+		opacity: .5;
+		cursor: not-allowed;
+	}
+	.gallery-pagination .page-indicator {
+		color: rgba(255, 255, 255, .85);
+		font-size: .9rem;
+		padding: 0 4px;
+	}
 </style>
 </head>
 
@@ -234,6 +266,7 @@
 <article class="thumb"><a href="images/fulls/1.JPG" class="image"><img src="images/thumbs/1.JPG" alt="El Púlpito, 2025"/></a></article>
 	
 </div>
+<nav id="gallery-pagination" class="gallery-pagination" aria-label="Paginación de la galería"></nav>
 <footer id="footer" class="panel">
 <div class="inner split">
 	<section>
@@ -280,6 +313,81 @@ document.querySelectorAll('img').forEach(img => {
   if (!img.hasAttribute('loading')) img.loading = 'lazy';
   if (!img.hasAttribute('decoding')) img.decoding = 'async';
 });
+
+(() => {
+  const itemsPerPage = 24;
+  const main = document.querySelector('#main');
+  const pagination = document.querySelector('#gallery-pagination');
+  if (!main || !pagination) return;
+
+  const thumbs = Array.from(main.querySelectorAll('article.thumb'));
+  if (thumbs.length <= itemsPerPage) {
+    pagination.hidden = true;
+    return;
+  }
+
+  const totalPages = Math.ceil(thumbs.length / itemsPerPage);
+  let currentPage = 1;
+
+  const pageFromHash = Number.parseInt(window.location.hash.replace('#page-', ''), 10);
+  if (!Number.isNaN(pageFromHash) && pageFromHash >= 1 && pageFromHash <= totalPages) {
+    currentPage = pageFromHash;
+  }
+
+  const setPage = (page) => {
+    currentPage = page;
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    thumbs.forEach((thumb, index) => {
+      thumb.style.display = index >= start && index < end ? '' : 'none';
+    });
+
+    pagination.innerHTML = '';
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.textContent = '← Anterior';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', () => setPage(currentPage - 1));
+    pagination.appendChild(prevBtn);
+
+    const indicator = document.createElement('span');
+    indicator.className = 'page-indicator';
+    indicator.textContent = `Página ${currentPage} de ${totalPages}`;
+    pagination.appendChild(indicator);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.textContent = 'Siguiente →';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', () => setPage(currentPage + 1));
+    pagination.appendChild(nextBtn);
+
+    for (let p = 1; p <= totalPages; p += 1) {
+      const pageBtn = document.createElement('button');
+      pageBtn.type = 'button';
+      pageBtn.textContent = String(p);
+      if (p === currentPage) pageBtn.classList.add('active');
+      pageBtn.addEventListener('click', () => setPage(p));
+      pagination.appendChild(pageBtn);
+    }
+
+    const desiredHash = `#page-${currentPage}`;
+    if (window.location.hash !== desiredHash) {
+      history.replaceState(null, '', desiredHash);
+    }
+    main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  window.addEventListener('hashchange', () => {
+    const page = Number.parseInt(window.location.hash.replace('#page-', ''), 10);
+    if (!Number.isNaN(page) && page >= 1 && page <= totalPages && page !== currentPage) {
+      setPage(page);
+    }
+  });
+
+  setPage(currentPage);
+})();
 </script>
 </body>
 </html> 
