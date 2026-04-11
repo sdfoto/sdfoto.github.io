@@ -1,163 +1,405 @@
 <!DOCTYPE HTML>
-<html lang="es">
+<html>
 <head>
     <title>sd · foto</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
     <style>
-        #main {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 12px;
-            padding: 16px;
+        :root {
+            --bg: #17181b;
+            --panel: rgba(255,255,255,0.04);
+            --text: #f6f3ee;
+            --muted: #b7b2a8;
+            --accent: #c7a56a;
+            --line: rgba(255,255,255,0.08);
+            --shadow: 0 18px 40px rgba(0,0,0,0.28);
         }
 
-        .thumb {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            background: #111;
-            aspect-ratio: 1 / 1;
-            margin: 0;
+        body {
+            background: linear-gradient(180deg, #111214 0%, #1a1c20 100%);
+            color: var(--text);
         }
 
-        .thumb:hover {
-            transform: scale(1.02);
+        #wrapper {
+            background: transparent;
         }
 
-        .thumb .image,
-        .thumb img {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-        .thumb img {
-            object-fit: cover;
-        }
-
-        .thumb h2 {
-            font-size: 0.95rem;
-            line-height: 1.3;
-            margin: 0.5rem;
-            color: white;
+        #header {
+            background: rgba(17,18,20,0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
         }
 
         #hero {
-            text-align: center;
-            padding: 100px 10px;
-            background: #242629;
-            color: white;
+            padding: 7rem 2rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        #hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            color: white;
+        .eyebrow {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
         }
 
-        #hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: end;
         }
 
-        .pagination {
+        .hero-copy h1 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            line-height: 1.02;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.2rem;
+            text-transform: none;
+        }
+
+        .hero-copy p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 42rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .hero-actions {
             display: flex;
-            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .button.primary-soft {
+            background: var(--accent);
+            color: #17181b !important;
+            border: 0;
+            box-shadow: var(--shadow);
+        }
+
+        .button.ghost-soft {
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--text) !important;
+        }
+
+        .hero-panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 1.4rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-panel h2 {
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--muted);
+        }
+
+        .hero-panel ul {
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .hero-panel li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            color: var(--text);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 0.75rem;
+        }
+
+        .hero-panel li span:last-child {
+            color: var(--muted);
+        }
+
+        .search-shell {
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .search-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 1.4rem;
+            padding: 1.1rem 1.2rem;
+            display: grid;
+            gap: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .search-card h2 {
+            margin: 0;
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1.05rem;
+        }
+
+        .search-input {
+            display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 24px 16px 40px;
+            gap: 0.8rem;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .pagination button {
-            padding: 10px 16px;
-            border: none;
-            border-radius: 6px;
-            background: #242629;
-            color: white;
+        .search-input input {
+            background: transparent;
+            border: 0;
+            color: var(--text);
+            width: 100%;
+            outline: 0;
+            font-size: 1rem;
+        }
+
+        .search-tags {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .search-tags button {
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 0.45rem 0.8rem;
             cursor: pointer;
-            font: inherit;
+            transition: 0.2s ease;
         }
 
-        .pagination button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
+        .section-shell {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
         }
 
-        .pagination span {
-            font-size: 0.95rem;
+        .section-title h2 {
+            margin: 0 0 0.6rem 0;
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1.7rem;
         }
 
-        @media (max-width: 768px) {
-            #main {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        .section-title p {
+            margin: 0 0 1.4rem 0;
+            color: var(--muted);
+            max-width: 38rem;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.2rem;
+        }
+
+        .collection-card {
+            position: relative;
+            min-height: 20rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #1f2126;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .collection-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.62) 100%);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .collection-card .content {
+            position: absolute;
+            inset: auto 0 0 0;
+            z-index: 1;
+            padding: 1.3rem;
+        }
+
+        .collection-card .meta {
+            display: inline-block;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e7d8bc;
+            margin-bottom: 0.7rem;
+        }
+
+        .collection-card h3 {
+            text-transform: none;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+            font-size: 1.35rem;
+        }
+
+        .collection-card p {
+            margin: 0;
+            color: rgba(255,255,255,0.82);
+        }
+
+        #footer {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+        }
+
+        #footer .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-note {
+            color: var(--muted);
+            margin-top: -0.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        @media screen and (max-width: 980px) {
+            .hero-grid,
+            .collection-grid {
+                grid-template-columns: 1fr;
             }
-        }
 
-        @media (min-width: 1024px) {
-            #main {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            #hero {
+                padding-top: 5rem;
             }
         }
     </style>
 </head>
-
 <body class="is-preload">
     <div id="wrapper">
-
         <section id="hero">
-            <h1>sd · foto</h1>
-            <p>by Silvia. Disfruta navegando</p>
+            <span class="eyebrow">Fototeca de naturaleza</span>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1>Una forma elegante de explorar naturaleza por imágenes, especies, lugares y hábitats.</h1>
+                    <p>
+                        sd · foto nace como una fototeca visual de naturaleza, construida a partir de colecciones cuidadas,
+                        observaciones de campo y una navegación limpia pensada para dejar respirar a las imágenes.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#colecciones" class="button primary-soft">Ver colecciones</a>
+                        <a href="#footer" class="button ghost-soft">Contacto</a>
+                    </div>
+                </div>
+                <aside class="hero-panel">
+                    <h2>Visión del proyecto</h2>
+                    <ul>
+                        <li><span>Concepto</span><span>Fototeca visual de naturaleza</span></li>
+                        <li><span>Navegación</span><span>Colecciones, especies y contextos</span></li>
+                        <li><span>Capas futuras</span><span>Búsqueda temática, etiquetas y contexto naturalista</span></li>
+                        <li><span>Tono</span><span>Sobrio, elegante y centrado en imagen</span></li>
+                    </ul>
+                </aside>
+            </div>
         </section>
 
         <header id="header">
             <h1>
                 <a href="index.html">
-                    <strong>Vida en imágenes</strong> by Silvia
+                    <strong>sd · foto</strong> by Silvia
                 </a>
             </h1>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#footer" class="icon solid fa-info-circle">Contacto</a>
-                    </li>
+                    <li><a href="#colecciones" class="icon solid fa-images">Colecciones</a></li>
+                    <li><a href="aves.html" class="icon solid fa-dove">Aves</a></li>
+                    <li><a href="#footer" class="icon solid fa-envelope">Contacto</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div id="main">
-            <article class="thumb"><a href="images/fulls/169.jpg" class="image"><img src="images/thumbs/169.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/168.jpg" class="image"><img src="images/thumbs/168.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/167.jpg" class="image"><img src="images/thumbs/167.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/166.jpg" class="image"><img src="images/thumbs/166.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/165.jpg" class="image"><img src="images/thumbs/165.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/164.jpg" class="image"><img src="images/thumbs/164.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/163.jpg" class="image"><img src="images/thumbs/163.jpg" loading="lazy" decoding="async" alt=""></a><h2>32</h2></article>
-            <article class="thumb"><a href="images/fulls/162.jpg" class="image"><img src="images/thumbs/162.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/161.jpg" class="image"><img src="images/thumbs/161.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/160.jpg" class="image"><img src="images/thumbs/160.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/159.jpg" class="image"><img src="images/thumbs/159.jpg" loading="lazy" decoding="async" alt=""></a></article>
-            <article class="thumb"><a href="images/fulls/158.jpg" class="image"><img src="images/thumbs/158.jpg" loading="lazy" decoding="async" alt=""></a></article>
+        <section class="search-shell">
+            <div class="search-card">
+                <h2>Búsqueda en evolución</h2>
+                <div class="search-input">
+                    <span class="icon solid fa-search"></span>
+                    <input type="text" placeholder="Animales, aves, costa, bosque, Tenerife, hábitats..." disabled />
+                </div>
+                <div class="search-tags">
+                    <button type="button">Animales</button>
+                    <button type="button">Especies</button>
+                    <button type="button">Lugares</button>
+                    <button type="button">Hábitats</button>
+                    <button type="button">Costa</button>
+                    <button type="button">Bosque</button>
+                </div>
+            </div>
+        </section>
 
-            <!-- Aquí sigues pegando el resto de tus artículos tal cual -->
-        </div>
+        <section class="section-shell" id="colecciones">
+            <div class="section-title">
+                <h2>Colecciones destacadas</h2>
+                <p>Una primera vista del tono visual y de la navegación que irá tomando forma a partir de selecciones reales.</p>
+            </div>
 
-        <div class="pagination">
-            <button id="prevBtn">Anterior</button>
-            <span id="pageInfo">Página 1</span>
-            <button id="nextBtn">Siguiente</button>
-        </div>
+            <div class="collection-grid">
+                <article class="collection-card">
+                    <a href="aves.html" style="display:block; width:100%; height:100%; border-bottom:0; color:inherit;">
+                        <img src="images/fulls/aves/aves-01.jpg" alt="Primera colección de aves" />
+                        <div class="content">
+                            <span class="meta">Colección real</span>
+                            <h3>Aves</h3>
+                            <p>La primera mini galería real de esta nueva etapa, breve, cuidada y pensada para crecer.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="collection-card">
+                    <a href="arthropoda.html" style="display:block; width:100%; height:100%; border-bottom:0; color:inherit;">
+                        <img src="images/fulls/arthropoda/arthropoda-01.jpg" alt="Colección de artrópodos" />
+                        <div class="content">
+                            <span class="meta">Colección real</span>
+                            <h3>Arthropoda</h3>
+                            <p>Una colección más amplia y textural, abierta a insectos, arácnidos y otros artrópodos.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="collection-card">
+                    <img src="images/fulls/arthropoda/arthropoda-02.jpg" alt="Ruta futura por hábitat" />
+                    <div class="content">
+                        <span class="meta">Próxima capa</span>
+                        <h3>Hábitats</h3>
+                        <p>Exploración por medio, paisaje y entorno donde viven y se observan las especies.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
         <footer id="footer" class="panel">
             <div class="inner split">
                 <section>
-                    <h2>Enviar mensaje</h2>
+                    <h2>Contacto</h2>
+                    <p class="contact-note">Una base de contacto integrada en la experiencia visual de la web.</p>
                     <form method="post" action="#">
                         <div class="fields">
                             <div class="field half">
@@ -180,59 +422,11 @@
         </footer>
     </div>
 
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/jquery.poptrox.min.js" defer></script>
-    <script src="assets/js/browser.min.js" defer></script>
-    <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const itemsPerPage = 24;
-            const items = Array.from(document.querySelectorAll("#main .thumb"));
-            const totalPages = Math.ceil(items.length / itemsPerPage);
-
-            let currentPage = 1;
-
-            const prevBtn = document.getElementById("prevBtn");
-            const nextBtn = document.getElementById("nextBtn");
-            const pageInfo = document.getElementById("pageInfo");
-
-            function renderPage(page) {
-                const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
-
-                items.forEach((item, index) => {
-                    item.style.display = (index >= start && index < end) ? "" : "none";
-                });
-
-                pageInfo.textContent = `Página ${page} de ${totalPages}`;
-                prevBtn.disabled = page === 1;
-                nextBtn.disabled = page === totalPages;
-
-                window.scrollTo({
-                    top: document.getElementById("main").offsetTop - 100,
-                    behavior: "smooth"
-                });
-            }
-
-            prevBtn.addEventListener("click", function () {
-                if (currentPage > 1) {
-                    currentPage--;
-                    renderPage(currentPage);
-                }
-            });
-
-            nextBtn.addEventListener("click", function () {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    renderPage(currentPage);
-                }
-            });
-
-            renderPage(currentPage);
-        });
-    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
