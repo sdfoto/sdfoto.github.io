@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>sd · foto | Galería modelo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        :root {
+            --bg: #16171a;
+            --panel: rgba(255,255,255,0.04);
+            --panel-strong: rgba(255,255,255,0.08);
+            --text: #f5f1ea;
+            --muted: #b5aea2;
+            --accent: #ccb07a;
+            --line: rgba(255,255,255,0.08);
+            --shadow: 0 18px 40px rgba(0,0,0,0.28);
+        }
+
+        body {
+            background: linear-gradient(180deg, #111214 0%, #1a1c20 100%);
+            color: var(--text);
+        }
+
+        #wrapper {
+            background: transparent;
+        }
+
+        #header {
+            background: rgba(17,18,20,0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        #hero {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 6.5rem 2rem 2rem;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .hero-copy h1 {
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: clamp(2.6rem, 4.5vw, 4.8rem);
+            line-height: 1.03;
+            margin-bottom: 1rem;
+        }
+
+        .hero-copy p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            margin-bottom: 1.2rem;
+            max-width: 42rem;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+        }
+
+        .meta-pill {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0.42rem 0.8rem;
+            color: var(--muted);
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-panel h2 {
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-panel p {
+            margin: 0;
+            color: var(--text);
+        }
+
+        .hero-panel .stat {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .hero-panel .stat:last-child {
+            border-bottom: 0;
+        }
+
+        .hero-panel .stat span:last-child {
+            color: var(--muted);
+        }
+
+        .section-shell {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        .toolbar {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .toolbar-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 1.3rem;
+            padding: 1rem 1.1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .toolbar-card h2 {
+            margin: 0 0 0.8rem 0;
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1rem;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 0.85rem 1rem;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: 0;
+            color: var(--text);
+            width: 100%;
+            outline: 0;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tags span {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0.38rem 0.75rem;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .photo-card {
+            position: relative;
+            min-height: 24rem;
+            border-radius: 1.4rem;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #1f2125;
+            box-shadow: var(--shadow);
+        }
+
+        .photo-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.04) 30%, rgba(0,0,0,0.68) 100%);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-card .content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        .photo-card .label {
+            display: inline-block;
+            margin-bottom: 0.55rem;
+            color: #eadabd;
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .photo-card h3 {
+            margin: 0 0 0.35rem 0;
+            text-transform: none;
+            letter-spacing: 0.02em;
+            font-size: 1.08rem;
+        }
+
+        .photo-card p {
+            margin: 0;
+            color: rgba(255,255,255,0.82);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .next-step {
+            margin-top: 2rem;
+            padding: 1.2rem 1.3rem;
+            border-radius: 1.2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+            color: var(--muted);
+        }
+
+        .next-step strong {
+            color: var(--text);
+        }
+
+        @media screen and (max-width: 980px) {
+            .hero-grid,
+            .toolbar,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #hero {
+                padding-top: 5rem;
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <h1>
+                <a href="index.html"><strong>sd · foto</strong> by Silvia</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="icon solid fa-home">Inicio</a></li>
+                    <li><a href="#galeria" class="icon solid fa-images">Galería</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="hero">
+            <span class="eyebrow">Galería modelo</span>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <h1>Así podría verse una colección pensada para navegar como una fototeca.</h1>
+                    <p>
+                        Esta página no intenta ser una galería cerrada todavía, sino una plantilla elegante para futuras colecciones por especie, lugar o hábitat.
+                        La idea es que luego podamos conectar aquí la búsqueda real, las etiquetas y una capa más inteligente sin rehacer el diseño.
+                    </p>
+                    <div class="meta-row">
+                        <span class="meta-pill">Especies</span>
+                        <span class="meta-pill">Lugares</span>
+                        <span class="meta-pill">Hábitats</span>
+                        <span class="meta-pill">Selección curada</span>
+                    </div>
+                </div>
+                <aside class="hero-panel">
+                    <div>
+                        <h2>Ficha de colección</h2>
+                        <div class="stat"><span>Enfoque</span><span>Naturaleza y observación</span></div>
+                        <div class="stat"><span>Navegación</span><span>Visual + metadatos</span></div>
+                        <div class="stat"><span>Búsqueda futura</span><span>Texto, especie, lugar, medio</span></div>
+                    </div>
+                    <p>Cuando tengamos una primera selección real, esta plantilla servirá para validar el tono visual y el tipo de lectura que quieres para tus fotos.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-shell" id="galeria">
+            <div class="toolbar">
+                <div class="toolbar-card">
+                    <h2>Búsqueda preparada</h2>
+                    <div class="search-box">
+                        <span class="icon solid fa-search"></span>
+                        <input type="text" placeholder="Busca por ejemplo: aves, costa, Anaga, charcas, invertebrados..." disabled />
+                    </div>
+                </div>
+                <div class="toolbar-card">
+                    <h2>Filtros que crecerán con el catálogo</h2>
+                    <div class="filter-tags">
+                        <span>Animal</span>
+                        <span>Planta</span>
+                        <span>Costa</span>
+                        <span>Bosque</span>
+                        <span>Tenerife</span>
+                        <span>Especie</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+                <article class="photo-card">
+                    <img src="images/thumbs/arenasnegras.jpg" alt="Muestra de paisaje volcánico" />
+                    <div class="content">
+                        <span class="label">Lugar · relieve</span>
+                        <h3>Paisaje volcánico</h3>
+                        <p>Una tarjeta más contemplativa, útil para colecciones por entorno o localización.</p>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="images/thumbs/promemar.jpg" alt="Muestra de proyecto de conservación" />
+                    <div class="content">
+                        <span class="label">Proyecto · costa</span>
+                        <h3>Conservación marina</h3>
+                        <p>Sirve para fotos ligadas a entidades, salidas o series documentales.</p>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="images/thumbs/agua.jpg" alt="Muestra de bosque húmedo" />
+                    <div class="content">
+                        <span class="label">Hábitat · bosque</span>
+                        <h3>Laurisilva</h3>
+                        <p>Pensada para hábitats, atmósferas o recorridos con identidad propia.</p>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="images/thumbs/tahonilla.jpg" alt="Centro de recuperación" />
+                    <div class="content">
+                        <span class="label">Fauna · recuperación</span>
+                        <h3>Vida salvaje atendida</h3>
+                        <p>Encaja bien con colecciones más divulgativas o de conservación.</p>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="images/thumbs/rojas.jpg" alt="Costa rocosa" />
+                    <div class="content">
+                        <span class="label">Medio · costa</span>
+                        <h3>Costa rocosa</h3>
+                        <p>Una línea muy útil si luego quieres explorar por medios donde viven las especies.</p>
+                    </div>
+                </article>
+
+                <article class="photo-card">
+                    <img src="images/thumbs/ull.jpg" alt="Entorno verde" />
+                    <div class="content">
+                        <span class="label">Lugar · detalle</span>
+                        <h3>Jardines y rincones</h3>
+                        <p>También puede funcionar para colecciones pequeñas o más íntimas.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="next-step">
+                <strong>Siguiente paso lógico:</strong> sustituir estas tarjetas de muestra por una selección mínima real y decidir si la primera galería definitiva será por <em>especie</em>, por <em>lugar</em> o por <em>hábitat</em>.
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
