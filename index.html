@@ -9,17 +9,19 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
         :root {
-            --bg: #17181b;
-            --panel: rgba(255,255,255,0.04);
-            --text: #f6f3ee;
-            --muted: #b7b2a8;
-            --accent: #c7a56a;
-            --line: rgba(255,255,255,0.08);
-            --shadow: 0 18px 40px rgba(0,0,0,0.28);
+            --bg: #ffffff;
+            --panel: #ffffff;
+            --text: #25312b;
+            --muted: #68756e;
+            --accent: #b98748;
+            --accent-dark: #815a2d;
+            --line: #dfe7e2;
+            --soft: #f5f9f6;
+            --shadow: 0 18px 45px rgba(44, 68, 55, 0.1);
         }
 
         body {
-            background: linear-gradient(180deg, #111214 0%, #1a1c20 100%);
+            background: var(--bg);
             color: var(--text);
         }
 
@@ -28,34 +30,41 @@
         }
 
         #header {
-            background: rgba(17,18,20,0.7);
+            background: rgba(255,255,255,0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--line);
         }
 
+        #header a,
+        #header h1 {
+            color: var(--text) !important;
+        }
+
+        #header h1 strong {
+            color: var(--text) !important;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        #header nav > ul > li a {
+            color: var(--text) !important;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        #header nav > ul > li a:hover,
+        #header nav > ul > li a:focus {
+            color: var(--text) !important;
+            transform: translateY(-2px);
+        }
+
         #hero {
-            padding: 7rem 2rem 4rem;
+            padding: 3.5rem 2rem 3rem;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        .eyebrow {
-            display: inline-block;
-            padding: 0.35rem 0.75rem;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            color: var(--muted);
-            font-size: 0.8rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            margin-bottom: 1.25rem;
-        }
-
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 2rem;
-            align-items: end;
+            display: block;
         }
 
         .hero-copy h1 {
@@ -64,6 +73,7 @@
             letter-spacing: 0.03em;
             margin-bottom: 1.2rem;
             text-transform: none;
+            color: var(--text);
         }
 
         .hero-copy p {
@@ -81,7 +91,7 @@
 
         .button.primary-soft {
             background: var(--accent);
-            color: #17181b !important;
+            color: #ffffff !important;
             border: 0;
             box-shadow: var(--shadow);
         }
@@ -89,42 +99,22 @@
         .button.ghost-soft {
             background: transparent;
             border: 1px solid var(--line);
+            box-shadow: none !important;
             color: var(--text) !important;
         }
 
-        .hero-panel {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 1.4rem;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
+        .button.ghost-soft:hover,
+        .button.ghost-soft:focus {
+            background: transparent !important;
+            border-color: var(--accent) !important;
+            box-shadow: none !important;
+            color: var(--text) !important;
         }
 
-        .hero-panel h2 {
-            text-transform: none;
-            letter-spacing: 0.02em;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: var(--muted);
-        }
-
-        .hero-panel ul {
-            display: grid;
-            gap: 0.85rem;
-        }
-
-        .hero-panel li {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            color: var(--text);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding-bottom: 0.75rem;
-        }
-
-        .hero-panel li span:last-child {
-            color: var(--muted);
+        .button.ghost-soft:hover:active {
+            background: transparent !important;
+            box-shadow: none !important;
+            color: var(--text) !important;
         }
 
         .search-shell {
@@ -148,6 +138,7 @@
             text-transform: none;
             letter-spacing: 0.02em;
             font-size: 1.05rem;
+            color: var(--text);
         }
 
         .search-input {
@@ -156,8 +147,8 @@
             gap: 0.8rem;
             padding: 0.9rem 1rem;
             border-radius: 1rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--soft);
+            border: 1px solid var(--line);
         }
 
         .search-input input {
@@ -178,11 +169,17 @@
         .search-tags button {
             border: 1px solid var(--line);
             background: transparent;
-            color: var(--muted);
+            color: var(--muted) !important;
             border-radius: 999px;
             padding: 0.45rem 0.8rem;
             cursor: pointer;
             transition: 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 2.5rem;
+            line-height: 1;
+            text-align: center;
         }
 
         .section-shell {
@@ -196,6 +193,7 @@
             text-transform: none;
             letter-spacing: 0.02em;
             font-size: 1.7rem;
+            color: var(--text);
         }
 
         .section-title p {
@@ -215,7 +213,7 @@
             min-height: 20rem;
             border-radius: 1.5rem;
             overflow: hidden;
-            background: #1f2126;
+            background: var(--soft);
             border: 1px solid var(--line);
             box-shadow: var(--shadow);
         }
@@ -225,6 +223,18 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.62) 100%);
+            pointer-events: none;
+        }
+
+        .image-lightbox-trigger {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            cursor: zoom-in;
         }
 
         .collection-card img {
@@ -241,8 +251,9 @@
         .collection-card .content {
             position: absolute;
             inset: auto 0 0 0;
-            z-index: 1;
+            z-index: 2;
             padding: 1.3rem;
+            pointer-events: none;
         }
 
         .collection-card .meta {
@@ -259,6 +270,23 @@
             letter-spacing: 0.02em;
             margin-bottom: 0.5rem;
             font-size: 1.35rem;
+            color: #ffffff;
+            transition: color 0.2s ease;
+        }
+
+        .collection-card h3 a {
+            color: #ffffff !important;
+            border-bottom-color: rgba(255,255,255,0.45);
+            pointer-events: auto;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .collection-card:hover h3,
+        .collection-card:hover h3 a,
+        .collection-card h3 a:hover,
+        .collection-card h3 a:focus {
+            color: var(--accent) !important;
+            border-bottom-color: rgba(185,135,72,0.7);
         }
 
         .collection-card p {
@@ -267,7 +295,7 @@
         }
 
         #footer {
-            background: rgba(255,255,255,0.02);
+            background: var(--soft);
             border-top: 1px solid var(--line);
         }
 
@@ -276,10 +304,88 @@
             margin: 0 auto;
         }
 
+        #footer h2 {
+            color: var(--text);
+        }
+
         .contact-note {
             color: var(--muted);
             margin-top: -0.2rem;
             margin-bottom: 1.2rem;
+        }
+
+        .contact-status {
+            padding: 0.85rem 1rem;
+            margin: 0 0 1.2rem;
+            border: 1px solid var(--accent);
+            border-radius: 0.75rem;
+            background: rgba(185,135,72,0.1);
+            color: var(--text);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        #footer input,
+        #footer textarea {
+            color: var(--text);
+            border-color: var(--line);
+            background: #ffffff;
+        }
+
+        #footer input[type="reset"] {
+            color: var(--text) !important;
+        }
+
+        .image-lightbox {
+            width: min(92vw, 1200px);
+            max-width: none;
+            max-height: 92vh;
+            padding: 0;
+            border: 0;
+            border-radius: 1rem;
+            background: transparent;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+            overflow: visible;
+        }
+
+        .image-lightbox::backdrop {
+            background: rgba(20, 27, 23, 0.82);
+            backdrop-filter: blur(4px);
+        }
+
+        .image-lightbox img {
+            display: block;
+            width: 100%;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 1rem;
+            background: #ffffff;
+        }
+
+        .image-lightbox-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            padding: 0;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 50%;
+            background: rgba(20,27,23,0.72);
+            color: #ffffff;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
         }
 
         @media screen and (max-width: 980px) {
@@ -289,7 +395,7 @@
             }
 
             #hero {
-                padding-top: 5rem;
+                padding-top: 2.5rem;
             }
         }
     </style>
@@ -297,27 +403,18 @@
 <body class="is-preload">
     <div id="wrapper">
         <section id="hero">
-            <span class="eyebrow">Fototeca de naturaleza</span>
             <div class="hero-grid">
                 <div class="hero-copy">
-                    <h1>Explora la naturaleza.</h1>
+                    <h1>FOTOTECA NATURAL</h1>
                     <p>
-                        sd · foto nace como una fototeca visual de naturaleza, construida a partir de observaciones de campo.
+                        sd · foto nace como una fototeca visual de naturaleza, construida a partir de registros visuales cuidados,
+                        observaciones de campo y una navegación limpia pensada para dejar respirar a las imágenes.
                     </p>
                     <div class="hero-actions">
-                        <a href="#colecciones" class="button primary-soft">Ver colecciones</a>
+                        <a href="#observaciones" class="button primary-soft">Ver observaciones</a>
                         <a href="#footer" class="button ghost-soft">Contacto</a>
                     </div>
                 </div>
-                <aside class="hero-panel">
-                    <h2>Visión del proyecto</h2>
-                    <ul>
-                        <li><span>Concepto</span><span>Fototeca visual de naturaleza</span></li>
-                        <li><span>Navegación</span><span>Colecciones, especies y contextos</span></li>
-                        <li><span>Capas futuras</span><span>Búsqueda temática, etiquetas y contexto naturalista</span></li>
-                        <li><span>Tono</span><span>Sobrio, elegante y centrado en imagen</span></li>
-                    </ul>
-                </aside>
             </div>
         </section>
 
@@ -329,8 +426,7 @@
             </h1>
             <nav>
                 <ul>
-                    <li><a href="#colecciones" class="icon solid fa-images">Colecciones</a></li>
-                    <li><a href="aves.html" class="icon solid fa-dove">Aves</a></li>
+                    <li><a href="#observaciones" class="icon solid fa-images">Observaciones</a></li>
                     <li><a href="#footer" class="icon solid fa-envelope">Contacto</a></li>
                 </ul>
             </nav>
@@ -338,7 +434,7 @@
 
         <section class="search-shell">
             <div class="search-card">
-                <h2>Búsqueda en evolución</h2>
+                <h2>Búsqueda específica</h2>
                 <div class="search-input">
                     <span class="icon solid fa-search"></span>
                     <input type="text" placeholder="Animales, aves, costa, bosque, Tenerife, hábitats..." disabled />
@@ -354,41 +450,41 @@
             </div>
         </section>
 
-        <section class="section-shell" id="colecciones">
+        <section class="section-shell" id="observaciones">
             <div class="section-title">
-                <h2>Colecciones destacadas</h2>
-                <p>Una primera vista del tono visual y de la navegación que irá tomando forma a partir de selecciones reales.</p>
+                <h2>Observaciones destacadas</h2>
+                <p>Una mirada a las especies documentadas en distintos grupos, lugares y hábitats.</p>
             </div>
 
+            <!-- Mantener las observaciones mas recientes al principio de esta lista. -->
             <div class="collection-grid">
-                <article class="collection-card">
-                    <a href="aves.html" style="display:block; width:100%; height:100%; border-bottom:0; color:inherit;">
-                        <img src="images/fulls/aves/aves-01.jpg" alt="Primera colección de aves" />
-                        <div class="content">
-                            <span class="meta">Colección real</span>
-                            <h3>Aves</h3>
-                            <p>La primera mini galería real de esta nueva etapa, breve, cuidada y pensada para crecer.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="collection-card">
-                    <a href="arthropoda.html" style="display:block; width:100%; height:100%; border-bottom:0; color:inherit;">
-                        <img src="images/fulls/arthropoda/arthropoda-01.jpg" alt="Colección de artrópodos" />
-                        <div class="content">
-                            <span class="meta">Colección real</span>
-                            <h3>Arthropoda</h3>
-                            <p>Una colección más amplia y textural, abierta a insectos, arácnidos y otros artrópodos.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="collection-card">
-                    <img src="images/fulls/arthropoda/arthropoda-02.jpg" alt="Ruta futura por hábitat" />
+                <article class="collection-card" data-observation="aves">
+                    <button class="image-lightbox-trigger" type="button" aria-label="Ampliar observación de aves">
+                        <img src="images/fulls/aves/aves-01.jpg" alt="Observación de aves" />
+                    </button>
                     <div class="content">
-                        <span class="meta">Próxima capa</span>
+                        <h3><a href="aves.html">Aves</a></h3>
+                        <p class="species-count">Calculando especies...</p>
+                    </div>
+                </article>
+
+                <article class="collection-card" data-observation="arthropoda">
+                    <button class="image-lightbox-trigger" type="button" aria-label="Ampliar observación de artrópodos">
+                        <img src="images/fulls/arthropoda/arthropoda-01.jpg" alt="Observación de artrópodos" />
+                    </button>
+                    <div class="content">
+                        <h3><a href="arthropoda.html">Arthropoda</a></h3>
+                        <p class="species-count">Calculando especies...</p>
+                    </div>
+                </article>
+
+                <article class="collection-card" data-observation="habitats">
+                    <button class="image-lightbox-trigger" type="button" aria-label="Ampliar Ruta futura por hábitat">
+                        <img src="images/fulls/arthropoda/arthropoda-02.jpg" alt="Ruta futura por hábitat" />
+                    </button>
+                    <div class="content">
                         <h3>Hábitats</h3>
-                        <p>Exploración por medio, paisaje y entorno donde viven y se observan las especies.</p>
+                        <p class="species-count">Calculando especies...</p>
                     </div>
                 </article>
             </div>
@@ -398,17 +494,25 @@
             <div class="inner split">
                 <section>
                     <h2>Contacto</h2>
-                    <p class="contact-note">Una base de contacto integrada en la experiencia visual de la web.</p>
-                    <form method="post" action="#">
+                    <p class="contact-note">Escribe tu consulta y recibiré el mensaje directamente por correo electrónico.</p>
+                    <p class="contact-status" id="contact-status" role="status" hidden>Mensaje enviado correctamente. Gracias por escribir.</p>
+                    <form method="post" action="https://formsubmit.co/glezdiazsilvia@gmail.com">
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde sd · foto" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_next" value="https://sdfoto.github.io/?contacto=enviado" />
+                        <input class="visually-hidden" type="text" name="_honey" tabindex="-1" autocomplete="off" />
                         <div class="fields">
                             <div class="field half">
-                                <input type="text" name="name" id="name" placeholder="Nombre" />
+                                <label class="visually-hidden" for="name">Nombre</label>
+                                <input type="text" name="name" id="name" placeholder="Nombre" autocomplete="name" required />
                             </div>
                             <div class="field half">
-                                <input type="text" name="email" id="email" placeholder="Email" />
+                                <label class="visually-hidden" for="email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" required />
                             </div>
                             <div class="field">
-                                <textarea name="message" id="message" rows="4" placeholder="Mensaje"></textarea>
+                                <label class="visually-hidden" for="message">Mensaje</label>
+                                <textarea name="message" id="message" rows="4" placeholder="Mensaje" minlength="10" required></textarea>
                             </div>
                         </div>
                         <ul class="actions">
@@ -421,11 +525,64 @@
         </footer>
     </div>
 
+    <dialog class="image-lightbox" id="image-lightbox" aria-label="Imagen ampliada">
+        <button class="image-lightbox-close" type="button" aria-label="Cerrar imagen">&times;</button>
+        <img src="" alt="" />
+    </dialog>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/observations-data.js"></script>
+    <script>
+        (function () {
+            var lightbox = document.getElementById('image-lightbox');
+            var lightboxImage = lightbox.querySelector('img');
+            var closeButton = lightbox.querySelector('.image-lightbox-close');
+            var query = new URLSearchParams(window.location.search);
+
+            if (query.get('contacto') === 'enviado') {
+                document.getElementById('contact-status').hidden = false;
+                window.setTimeout(function () {
+                    jQuery('#footer').trigger('---show');
+                }, 0);
+
+                if (window.history.replaceState) {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
+            }
+
+            document.querySelectorAll('[data-observation]').forEach(function (card) {
+                var observation = card.getAttribute('data-observation');
+                var species = window.sdFotoObservations[observation] || [];
+                var speciesCount = new Set(species).size;
+                var label = speciesCount === 1 ? 'especie observada' : 'especies observadas';
+
+                card.querySelector('.species-count').textContent = speciesCount + ' ' + label;
+            });
+
+            document.querySelectorAll('.image-lightbox-trigger').forEach(function (trigger) {
+                trigger.addEventListener('click', function () {
+                    var image = trigger.querySelector('img');
+                    lightboxImage.src = image.src;
+                    lightboxImage.alt = image.alt;
+                    lightbox.showModal();
+                });
+            });
+
+            closeButton.addEventListener('click', function () {
+                lightbox.close();
+            });
+
+            lightbox.addEventListener('click', function (event) {
+                if (event.target === lightbox) {
+                    lightbox.close();
+                }
+            });
+        }());
+    </script>
 </body>
 </html>
